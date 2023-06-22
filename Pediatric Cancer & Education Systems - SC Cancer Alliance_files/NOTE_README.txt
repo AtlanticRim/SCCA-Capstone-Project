@@ -1,0 +1,1 @@
+The files in this folder were grabbed from the SCCA Cancer Plan page. We may need to remove some unneeded images or add some new ones. This is just a few to get the header/footer working correctly.
