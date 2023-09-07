@@ -297,7 +297,7 @@ footer .logos {
 footer .logos a {
   display: block;
   margin: 0 0 10px;
-  /*vertical-align: middle;*/
+  vertical-align: middle;
   border: 1px solid #000; }
 
 footer .logos a img {
@@ -677,7 +677,7 @@ footer .logos a img {
   .featured-events h1 {
     margin-bottom: 15px; }
   .featured-events .event {
-    /*vertical-align: top;*/
+    vertical-align: top;
     max-width: 295px;
     width: 100%;
     display: block;
@@ -1399,7 +1399,7 @@ footer .logos a img {
   max-width: 400px;
   margin: 10px auto;
   text-align: left;
-  /*vertical-align: top;*/ }
+  vertical-align: top; }
   .calendar-card img {
     width: 96%;
     box-shadow: 6px 6px 0px 0px #dee2ea;

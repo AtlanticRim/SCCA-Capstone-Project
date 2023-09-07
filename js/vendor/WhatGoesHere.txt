@@ -1,0 +1,5 @@
+bootstrap.min.js
+featherlight.min.js
+jquery-1.11.2.min.js
+jquery.cycle2.min.js
+modernizr-2.8.3-respond-1.4.2.min.js
