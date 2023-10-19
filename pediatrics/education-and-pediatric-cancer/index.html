@@ -258,6 +258,7 @@
                     <p><b>Special precautions.</b> Educators and school administrators will need to know if there are actions that need to be taken in certain situations that may arise during the school day. For instance, if the child has a weakened immune system, and other children in the class are sick or feverish they will need to know what to do in this situation.</p>
                     <p><b>Emergency Contacts.</b> The school nurse and administrators would need access to who to contact in case of emergency or to answer questions the school may have. This includes a child’s primary care providers and nurses.</p>
                     <p><b>Customize a Meet My Child Flyer.</b></p>
+                    <p><a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">Open element in lightbox</a></p> <!--DEBUG data-featherlight-root="header"-->
                   </div>
                 </div><!--End row-->
                 <div class="row">
@@ -758,6 +759,7 @@
 
     function updateTagDisplay(sectionID) {
       var tagArray;
+      // Switches tagArray to the name of the appropriate array
       switch(sectionID) {
         case 0: tagArray = addedStrengthTags; break;
         case 1: tagArray = addedWorksForMeTags; break;
@@ -765,8 +767,9 @@
         case 3: tagArray = addedWorkingOnTags; break;
         case 4: tagArray = addedWhatILoveTags; break;
         default: return; break;
-      } // Switch tagArray to the name of the appropriate array and then use to for loop from test file
+      } 
 
+      // Updates all of the tags in that section
       for (var i=0; i<10; i++) { // i goes from 0 to 9 to cover all tags
         document.getElementById("tagButton".concat(sectionID).concat(i)).style.display = 'none';
         if (tagArray != undefined && tagArray[i] != undefined) {
@@ -818,8 +821,8 @@
       
       // Draw Child Name
       firstPage.drawText(childName, {
-          x: 720,
-          y: 2438,
+          x: 1775,
+          y: 990,
           size: fontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -827,8 +830,8 @@
 
       // Draw Parent Name
       firstPage.drawText(parentName, {
-          x: 150,
-          y: 905,
+          x: 50,
+          y: 1050,
           size: fontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -836,8 +839,8 @@
 
       // Draw PhoneNumber
       firstPage.drawText(phoneNumber, {
-          x: 380,
-          y: 573,
+          x: 50,
+          y: 1125,
           size: fontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -845,8 +848,8 @@
 
       // Draw Email
       firstPage.drawText(email, {
-          x: 380,
-          y: 496,
+          x: 50,
+          y: 1200,
           size: fontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -859,7 +862,7 @@
 
     async function addImage() {
       if (imageAsUint8Array != undefined) var imageToEmbed = await pdfDoc.embedPng(imageAsUint8Array);
-      else console.log("Add image 8array undefined"); // DEBUG should be return;
+      else return;
         
       /* Scales the image to fit in the 600x600 box
       Note: This code is reproduced from https://github.com/Hopding/pdf-lib/blob/b8a44bd/src/api/PDFImage.ts#L96
@@ -873,8 +876,8 @@
       
       // Draw image on the PDF
       firstPage.drawImage (imageToEmbed, {
-          x: 1800, // X position of image field on the page
-          y: 2650, // Y postion of the image field on the page
+          x: 1805, // X position of image field on the page
+          y: 245, // Y postion of the image field on the page
           width: imageScaled.width,
           height: imageScaled.height
       });
@@ -884,9 +887,18 @@
       // Save and download the PDF
       const pdfBytes = await pdfDoc.save();
 
-      // DEBUG This function was throwing an error, I spelled out browser.downloads.download to see if it recognizes it
-      // NOTE: This function not supported in Safari, Firefox for Android, and Safari for iOS
-      browser.downloads.download(pdfBytes, "SCCA_Personalized_PDF.pdf");
+      // // DEBUG This function was throwing an error, I spelled out browser.downloads.download to see if it recognizes it
+      // // NOTE: This function not supported in Safari, Firefox for Android, and Safari for iOS
+      // browser.downloads.download(pdfBytes, "SCCA_Personalized_PDF.pdf");
+
+      // var link = document.createElement('a');
+      // link.style = "display:none;";
+      // link.href = pdfBytes;
+      // link.download = "Meet My Child";
+      // link.dispatchEvent(new MouseEvent('click'));
+
+      const pdfBytesBlobURL = URL.createObjectURL(pdfBytes);
+      window.open(pdfBytesBlobURL, '_blank');
     };
     // END PDF CUSTOMIZATION AND DOWNLOAD FEATURE
 
