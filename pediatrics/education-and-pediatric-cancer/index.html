@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="/css/featherlight.min.css">
   <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/pediatrics.css"><!--Link to custom CSS file-->
 
 </head>
 <body>
@@ -232,8 +233,8 @@
               <p>The transition back to school can be hard for parents to undergo, especially without guidance. There are many different things to consider and questions that need to be addressed directly between a child’s parents or guardian and the child’s teachers and school administrators. All of these concerns once addressed can help make parents and families know their child will be properly cared for and educated while at school. Since a child’s cancer diagnosis and treatment can interrupt their regular school routines, informing school educators and administrators of how to best care for a student who is recovering from this can have a great effect on a child’s social and academic development after returning to school. It can be comforting as a parent to know that going back to school will help to put their child in the best environment for them to succeed.</p>
               <p>These sections will guide parents and guardians as well as educators through the main steps they need to complete to plan for their child to return to school and some topics of concern to address with educators and school administrators to ensure their child has the right support at school.</p>
               <div class="row">
-                <div class="col-md-6" style="padding-bottom:15px;"><button type="button" class="large-purple-button" onclick="window.location.href='#parents-and-guardians';" style="width:100%;">Information for Parents</button></div>
-                <div class="col-md-6" style="padding-bottom:15px;"><button type="button" class="large-purple-button" onclick="window.location.href='#educators';" style="width:100%;">Information for Educators</button></div>
+                <div class="col-md-6 extra-padding"><button type="button" class="large-purple-button full-width" onclick="window.location.href='#parents-and-guardians';">Information for Parents</button></div>
+                <div class="col-md-6 extra-padding"><button type="button" class="large-purple-button full-width" onclick="window.location.href='#educators';">Information for Educators</button></div>
               </div>
 
               <!-- Section for Parents and Guardians -->
@@ -243,7 +244,7 @@
                   <div class="col-12">
                     <p>What the school should know:</p>
                     <h2>Education</h2>
-                    <p><b>Educational Needs.</b> The school needs to have documents for any Individualized Education plans (IEP) or 504 plan if the child needs assistance learning<sup><a href="#citation1">[1]</a></sup></p>
+                    <p><b>Educational Needs.</b> The school needs to have documents for any Individualized Education plans (IEP) or 504 plan if the child needs assistance learning<sup><a href="#citation1" class="citation">[1]</a></sup></p>
                     <p><b>Schoolwork and Assignments.</b> It is important to communicate with the teacher to see if the child’s school work and notes for class can be provided electronically as well in the case the child needs to be absent for any reason.</p>
                     <h2>Health</h2>
                     <p><b>Health Monitoring Devices.</b> In the case of using devices that monitor a child’s health, a child’s educator or school nurse may need to be responsible for monitoring a child’s health conditions while in class or during the school day. They will need to be notified of what apps or technology they need to download.</p>
@@ -263,11 +264,11 @@
                 </div><!--End row-->
                 <div class="row">
                   <div class="col-12">
-                    <p id="citation1" style="font-size:75%;">[1] Citation</p>
-                    <p id="citation2" style="font-size:75%;">[2] Citation</p>
-                    <p id="citation3" style="font-size:75%;">[3] Citation</p>
-                    <p id="citation4" style="font-size:75%;">[4] Citation</p>
-                    <p id="citation5" style="font-size:75%;">[5] Citation</p>
+                    <p id="citation1" class="citation">[1] Citation</p>
+                    <p id="citation2" class="citation">[2] Citation</p>
+                    <p id="citation3" class="citation">[3] Citation</p>
+                    <p id="citation4" class="citation">[4] Citation</p>
+                    <p id="citation5" class="citation">[5] Citation</p>
                   </div>
                 </div>
               </div>
@@ -381,7 +382,7 @@
           <input type="text" id="parentLastName" name="parentLastName"><br>
           <p id="parentNameError"></p>
 
-          <h2>Contact Information (optional)</h2>
+          <h3>Contact Information (optional)</h3>
           <label for="phoneNumber">Phone Number</label><br>
           <input type="text" id="phoneNumber" name="phoneNumber"><br>
           <p id="phoneNumberError"></p>
@@ -390,7 +391,7 @@
           <input type="text" id="email" name="email"><br>
           <p id="emailError"></p>
 
-          <h2>Upload an Image</h2>
+          <h3>Upload an Image (optional)</h3>
           <p>Recommended Pictures: Picture of the head and shoulder, at least 700x700 pixels.</p>
           <label for="imageUpload">Upload Image</label><br>
           <input type="file" id="imageUpload" title="imageUpload" accept=".png, .jpg, .jpeg" />
@@ -404,28 +405,28 @@
 
               </p>
               <!--10 Strength Tags-->
-              <button type="button" id="tagButton00" title="Remove Tag" style="display: none;" onclick="removeTag(0, 0)">Button 0</button>
-              <button type="button" id="tagButton01" title="Remove Tag" style="display: none;" onclick="removeTag(0, 1)">Button 1</button>
-              <button type="button" id="tagButton02" title="Remove Tag" style="display: none;" onclick="removeTag(0, 2)">Button 2</button>
-              <button type="button" id="tagButton03" title="Remove Tag" style="display: none;" onclick="removeTag(0, 3)">Button 3</button>
-              <button type="button" id="tagButton04" title="Remove Tag" style="display: none;" onclick="removeTag(0, 4)">Button 4</button>
-              <button type="button" id="tagButton05" title="Remove Tag" style="display: none;" onclick="removeTag(0, 5)">Button 5</button>
-              <button type="button" id="tagButton06" title="Remove Tag" style="display: none;" onclick="removeTag(0, 6)">Button 6</button>
-              <button type="button" id="tagButton07" title="Remove Tag" style="display: none;" onclick="removeTag(0, 7)">Button 7</button>
-              <button type="button" id="tagButton08" title="Remove Tag" style="display: none;" onclick="removeTag(0, 8)">Button 8</button>
-              <button type="button" id="tagButton09" title="Remove Tag" style="display: none;" onclick="removeTag(0, 9)">Button 9</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton00" title="Remove Tag"  onclick="removeTag(0, 0)">Button 0</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton01" title="Remove Tag"  onclick="removeTag(0, 1)">Button 1</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton02" title="Remove Tag"  onclick="removeTag(0, 2)">Button 2</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton03" title="Remove Tag"  onclick="removeTag(0, 3)">Button 3</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton04" title="Remove Tag"  onclick="removeTag(0, 4)">Button 4</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton05" title="Remove Tag"  onclick="removeTag(0, 5)">Button 5</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton06" title="Remove Tag"  onclick="removeTag(0, 6)">Button 6</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton07" title="Remove Tag"  onclick="removeTag(0, 7)">Button 7</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton08" title="Remove Tag"  onclick="removeTag(0, 8)">Button 8</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton09" title="Remove Tag"  onclick="removeTag(0, 9)">Button 9</button>
             </div>
             <div class="col-12" id="strengthsSuggestedTags">
-              <button type="button" id="suggestedTag00" class="addTagButton" title="Add Strengths0" onclick="addSuggestedTag(0, 0, 'Trouble Focusing')">+ Strengths0</button>
-              <button type="button" id="suggestedTag01" class="addTagButton" title="Add Strengths1" onclick="addSuggestedTag(0, 1, 'Motor Skills')">+ Strengths1</button>
-              <button type="button" id="suggestedTag02" class="addTagButton" title="Add Strengths2" onclick="addSuggestedTag(0, 2, 'Daily Medicine')">+ Strengths2</button>
-              <button type="button" id="suggestedTag03" class="addTagButton" title="Add Strengths3" onclick="addSuggestedTag(0, 3, 'Alphabet')">+ Strengths3</button>
-              <button type="button" id="suggestedTag04" class="addTagButton" title="Add Strengths4" onclick="addSuggestedTag(0, 4, 'Hearing Trouble')">+ Strengths4</button>
+              <button type="button" id="suggestedTag00" class="suggested-tag-button" title="Add Strengths0" onclick="addSuggestedTag(0, 0, 'Trouble Focusing')">+ Strengths0</button>
+              <button type="button" id="suggestedTag01" class="suggested-tag-button" title="Add Strengths1" onclick="addSuggestedTag(0, 1, 'Motor Skills')">+ Strengths1</button>
+              <button type="button" id="suggestedTag02" class="suggested-tag-button" title="Add Strengths2" onclick="addSuggestedTag(0, 2, 'Daily Medicine')">+ Strengths2</button>
+              <button type="button" id="suggestedTag03" class="suggested-tag-button" title="Add Strengths3" onclick="addSuggestedTag(0, 3, 'Alphabet')">+ Strengths3</button>
+              <button type="button" id="suggestedTag04" class="suggested-tag-button" title="Add Strengths4" onclick="addSuggestedTag(0, 4, 'Hearing Trouble')">+ Strengths4</button>
             </div>
             <div class="col-12" id="customStrengthTagEntryDiv">
               <label for="customStrengthTagEntry">Enter a Custom Strength</label>
               <input type="text" id="customStrengthTagEntry" title="Custom Strength Tag Entry">
-              <button type="submit" id="customStrengthTagEntrySubmit" onclick="addCustomTag(0)">Add Custom Tag</button>
+              <button type="submit" id="customStrengthTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(0)">Add Custom Tag</button>
             </div>
           </div>
           <div class="row" id="worksForMeTagSelection">
@@ -434,28 +435,28 @@
 
               </p>
               <!--10 worksForMe Tags-->
-              <button type="button" id="tagButton10" title="Remove Tag" style="display: none;" onclick="removeTag(1, 0)">Button 10</button>
-              <button type="button" id="tagButton11" title="Remove Tag" style="display: none;" onclick="removeTag(1, 1)">Button 11</button>
-              <button type="button" id="tagButton12" title="Remove Tag" style="display: none;" onclick="removeTag(1, 2)">Button 12</button>
-              <button type="button" id="tagButton13" title="Remove Tag" style="display: none;" onclick="removeTag(1, 3)">Button 13</button>
-              <button type="button" id="tagButton14" title="Remove Tag" style="display: none;" onclick="removeTag(1, 4)">Button 14</button>
-              <button type="button" id="tagButton15" title="Remove Tag" style="display: none;" onclick="removeTag(1, 5)">Button 15</button>
-              <button type="button" id="tagButton16" title="Remove Tag" style="display: none;" onclick="removeTag(1, 6)">Button 16</button>
-              <button type="button" id="tagButton17" title="Remove Tag" style="display: none;" onclick="removeTag(1, 7)">Button 17</button>
-              <button type="button" id="tagButton18" title="Remove Tag" style="display: none;" onclick="removeTag(1, 8)">Button 18</button>
-              <button type="button" id="tagButton19" title="Remove Tag" style="display: none;" onclick="removeTag(1, 9)">Button 19</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton10" title="Remove Tag"  onclick="removeTag(1, 0)">Button 10</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton11" title="Remove Tag"  onclick="removeTag(1, 1)">Button 11</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton12" title="Remove Tag"  onclick="removeTag(1, 2)">Button 12</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton13" title="Remove Tag"  onclick="removeTag(1, 3)">Button 13</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton14" title="Remove Tag"  onclick="removeTag(1, 4)">Button 14</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton15" title="Remove Tag"  onclick="removeTag(1, 5)">Button 15</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton16" title="Remove Tag"  onclick="removeTag(1, 6)">Button 16</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton17" title="Remove Tag"  onclick="removeTag(1, 7)">Button 17</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton18" title="Remove Tag"  onclick="removeTag(1, 8)">Button 18</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton19" title="Remove Tag"  onclick="removeTag(1, 9)">Button 19</button>
             </div>
             <div class="col-12" id="worksForMeSuggestedTags">
-              <button type="button" id="suggestedTag10" class="addTagButton" title="Add Strengths5" onclick="addSuggestedTag(1, 0, 'Trouble Focusing')">+ Strengths5</button>
-              <button type="button" id="suggestedTag11" class="addTagButton" title="Add Strengths6" onclick="addSuggestedTag(1, 1, 'Motor Skills')">+ Strengths6</button>
-              <button type="button" id="suggestedTag12" class="addTagButton" title="Add Strengths7" onclick="addSuggestedTag(1, 2, 'Daily Medicine')">+ Strengths7</button>
-              <button type="button" id="suggestedTag13" class="addTagButton" title="Add Strengths8" onclick="addSuggestedTag(1, 3, 'Alphabet')">+ Strengths8</button>
-              <button type="button" id="suggestedTag14" class="addTagButton" title="Add Strengths9" onclick="addSuggestedTag(1, 4, 'Hearing Trouble')">+ Strengths9</button>
+              <button type="button" id="suggestedTag10" class="suggested-tag-button" title="Add Strengths5" onclick="addSuggestedTag(1, 0, 'Trouble Focusing')">+ Strengths5</button>
+              <button type="button" id="suggestedTag11" class="suggested-tag-button" title="Add Strengths6" onclick="addSuggestedTag(1, 1, 'Motor Skills')">+ Strengths6</button>
+              <button type="button" id="suggestedTag12" class="suggested-tag-button" title="Add Strengths7" onclick="addSuggestedTag(1, 2, 'Daily Medicine')">+ Strengths7</button>
+              <button type="button" id="suggestedTag13" class="suggested-tag-button" title="Add Strengths8" onclick="addSuggestedTag(1, 3, 'Alphabet')">+ Strengths8</button>
+              <button type="button" id="suggestedTag14" class="suggested-tag-button" title="Add Strengths9" onclick="addSuggestedTag(1, 4, 'Hearing Trouble')">+ Strengths9</button>
             </div>
             <div class="col-12" id="customWorksForMeTagEntryDiv">
               <label for="customWorksForMeTagEntry">Enter a Custom Works For Me</label>
               <input type="text" id="customWorksForMeTagEntry" title="Custom Works For Me Tag Entry">
-              <button type="submit" id="customWorksForMeTagEntrySubmit" onclick="addCustomTag(1)">Add Custom Tag</button>
+              <button type="submit" id="customWorksForMeTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(1)">Add Custom Tag</button>
             </div>
           </div>
           <div class="row" id="doesntWorkTagSelection">
@@ -464,28 +465,28 @@
 
               </p>
               <!--10 doesntWork Tags-->
-              <button type="button" id="tagButton20" title="Remove Tag" style="display: none;" onclick="removeTag(2, 0)">Button 10</button>
-              <button type="button" id="tagButton21" title="Remove Tag" style="display: none;" onclick="removeTag(2, 1)">Button 11</button>
-              <button type="button" id="tagButton22" title="Remove Tag" style="display: none;" onclick="removeTag(2, 2)">Button 12</button>
-              <button type="button" id="tagButton23" title="Remove Tag" style="display: none;" onclick="removeTag(2, 3)">Button 13</button>
-              <button type="button" id="tagButton24" title="Remove Tag" style="display: none;" onclick="removeTag(2, 4)">Button 14</button>
-              <button type="button" id="tagButton25" title="Remove Tag" style="display: none;" onclick="removeTag(2, 5)">Button 15</button>
-              <button type="button" id="tagButton26" title="Remove Tag" style="display: none;" onclick="removeTag(2, 6)">Button 16</button>
-              <button type="button" id="tagButton27" title="Remove Tag" style="display: none;" onclick="removeTag(2, 7)">Button 17</button>
-              <button type="button" id="tagButton28" title="Remove Tag" style="display: none;" onclick="removeTag(2, 8)">Button 18</button>
-              <button type="button" id="tagButton29" title="Remove Tag" style="display: none;" onclick="removeTag(2, 9)">Button 19</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton20" title="Remove Tag"  onclick="removeTag(2, 0)">Button 10</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton21" title="Remove Tag"  onclick="removeTag(2, 1)">Button 11</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton22" title="Remove Tag"  onclick="removeTag(2, 2)">Button 12</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton23" title="Remove Tag"  onclick="removeTag(2, 3)">Button 13</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton24" title="Remove Tag"  onclick="removeTag(2, 4)">Button 14</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton25" title="Remove Tag"  onclick="removeTag(2, 5)">Button 15</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton26" title="Remove Tag"  onclick="removeTag(2, 6)">Button 16</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton27" title="Remove Tag"  onclick="removeTag(2, 7)">Button 17</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton28" title="Remove Tag"  onclick="removeTag(2, 8)">Button 18</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton29" title="Remove Tag"  onclick="removeTag(2, 9)">Button 19</button>
             </div>
             <div class="col-12" id="doesntWorkSuggestedTags">
-              <button type="button" id="suggestedTag20" class="addTagButton" title="Add Strengths10" onclick="addSuggestedTag(2, 0, 'Trouble Focusing')">+ Strengths10</button>
-              <button type="button" id="suggestedTag21" class="addTagButton" title="Add Strengths11" onclick="addSuggestedTag(2, 1, 'Motor Skills')">+ Strengths11</button>
-              <button type="button" id="suggestedTag22" class="addTagButton" title="Add Strengths12" onclick="addSuggestedTag(2, 2, 'Daily Medicine')">+ Strengths12</button>
-              <button type="button" id="suggestedTag23" class="addTagButton" title="Add Strengths13" onclick="addSuggestedTag(2, 3, 'Alphabet')">+ Strengths13</button>
-              <button type="button" id="suggestedTag24" class="addTagButton" title="Add Strengths14" onclick="addSuggestedTag(2, 4, 'Hearing Trouble')">+ Strengths14</button>
+              <button type="button" id="suggestedTag20" class="suggested-tag-button" title="Add Strengths10" onclick="addSuggestedTag(2, 0, 'Trouble Focusing')">+ Strengths10</button>
+              <button type="button" id="suggestedTag21" class="suggested-tag-button" title="Add Strengths11" onclick="addSuggestedTag(2, 1, 'Motor Skills')">+ Strengths11</button>
+              <button type="button" id="suggestedTag22" class="suggested-tag-button" title="Add Strengths12" onclick="addSuggestedTag(2, 2, 'Daily Medicine')">+ Strengths12</button>
+              <button type="button" id="suggestedTag23" class="suggested-tag-button" title="Add Strengths13" onclick="addSuggestedTag(2, 3, 'Alphabet')">+ Strengths13</button>
+              <button type="button" id="suggestedTag24" class="suggested-tag-button" title="Add Strengths14" onclick="addSuggestedTag(2, 4, 'Hearing Trouble')">+ Strengths14</button>
             </div>
             <div class="col-12" id="customDoesntWorkTagEntryDiv">
               <label for="customDoesntWorkTagEntry">Enter a Custom Doesn't Work For Me</label>
               <input type="text" id="customDoesntWorkTagEntry" title="Custom Doesn't Work For Me Tag Entry">
-              <button type="submit" id="customDoesntWorkTagEntrySubmit" onclick="addCustomTag(2)">Add Custom Tag</button>
+              <button type="submit" id="customDoesntWorkTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(2)">Add Custom Tag</button>
             </div>
           </div>
           <div class="row" id="workingOnTagSelection">
@@ -494,28 +495,28 @@
 
               </p>
               <!--10 workingOn Tags-->
-              <button type="button" id="tagButton30" title="Remove Tag" style="display: none;" onclick="removeTag(3, 0)">Button 10</button>
-              <button type="button" id="tagButton31" title="Remove Tag" style="display: none;" onclick="removeTag(3, 1)">Button 11</button>
-              <button type="button" id="tagButton32" title="Remove Tag" style="display: none;" onclick="removeTag(3, 2)">Button 12</button>
-              <button type="button" id="tagButton33" title="Remove Tag" style="display: none;" onclick="removeTag(3, 3)">Button 13</button>
-              <button type="button" id="tagButton34" title="Remove Tag" style="display: none;" onclick="removeTag(3, 4)">Button 14</button>
-              <button type="button" id="tagButton35" title="Remove Tag" style="display: none;" onclick="removeTag(3, 5)">Button 15</button>
-              <button type="button" id="tagButton36" title="Remove Tag" style="display: none;" onclick="removeTag(3, 6)">Button 16</button>
-              <button type="button" id="tagButton37" title="Remove Tag" style="display: none;" onclick="removeTag(3, 7)">Button 17</button>
-              <button type="button" id="tagButton38" title="Remove Tag" style="display: none;" onclick="removeTag(3, 8)">Button 18</button>
-              <button type="button" id="tagButton39" title="Remove Tag" style="display: none;" onclick="removeTag(3, 9)">Button 19</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton30" title="Remove Tag"  onclick="removeTag(3, 0)">Button 10</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton31" title="Remove Tag"  onclick="removeTag(3, 1)">Button 11</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton32" title="Remove Tag"  onclick="removeTag(3, 2)">Button 12</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton33" title="Remove Tag"  onclick="removeTag(3, 3)">Button 13</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton34" title="Remove Tag"  onclick="removeTag(3, 4)">Button 14</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton35" title="Remove Tag"  onclick="removeTag(3, 5)">Button 15</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton36" title="Remove Tag"  onclick="removeTag(3, 6)">Button 16</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton37" title="Remove Tag"  onclick="removeTag(3, 7)">Button 17</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton38" title="Remove Tag"  onclick="removeTag(3, 8)">Button 18</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton39" title="Remove Tag"  onclick="removeTag(3, 9)">Button 19</button>
             </div>
             <div class="col-12" id="workingOnSuggestedTags">
-              <button type="button" id="suggestedTag30" class="addTagButton" title="Add Strengths15" onclick="addSuggestedTag(3, 0, 'Trouble Focusing')">+ Strengths15</button>
-              <button type="button" id="suggestedTag31" class="addTagButton" title="Add Strengths16" onclick="addSuggestedTag(3, 1, 'Motor Skills')">+ Strengths16</button>
-              <button type="button" id="suggestedTag32" class="addTagButton" title="Add Strengths17" onclick="addSuggestedTag(3, 2, 'Daily Medicine')">+ Strengths17</button>
-              <button type="button" id="suggestedTag33" class="addTagButton" title="Add Strengths18" onclick="addSuggestedTag(3, 3, 'Alphabet')">+ Strengths18</button>
-              <button type="button" id="suggestedTag34" class="addTagButton" title="Add Strengths19" onclick="addSuggestedTag(3, 4, 'Hearing Trouble')">+ Strengths19</button>
+              <button type="button" id="suggestedTag30" class="suggested-tag-button" title="Add Strengths15" onclick="addSuggestedTag(3, 0, 'Trouble Focusing')">+ Strengths15</button>
+              <button type="button" id="suggestedTag31" class="suggested-tag-button" title="Add Strengths16" onclick="addSuggestedTag(3, 1, 'Motor Skills')">+ Strengths16</button>
+              <button type="button" id="suggestedTag32" class="suggested-tag-button" title="Add Strengths17" onclick="addSuggestedTag(3, 2, 'Daily Medicine')">+ Strengths17</button>
+              <button type="button" id="suggestedTag33" class="suggested-tag-button" title="Add Strengths18" onclick="addSuggestedTag(3, 3, 'Alphabet')">+ Strengths18</button>
+              <button type="button" id="suggestedTag34" class="suggested-tag-button" title="Add Strengths19" onclick="addSuggestedTag(3, 4, 'Hearing Trouble')">+ Strengths19</button>
             </div>
             <div class="col-12" id="customWorkingOnTagEntryDiv">
               <label for="customWorkingOnTagEntry">Enter a Custom Working On</label>
               <input type="text" id="customWorkingOnTagEntry" title="Custom Working On Tag Entry">
-              <button type="submit" id="customWorkingOnTagEntrySubmit" onclick="addCustomTag(3)">Add Custom Tag</button>
+              <button type="submit" id="customWorkingOnTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(3)">Add Custom Tag</button>
             </div>
           </div>
           <div class="row" id="whatILoveTagSelection">
@@ -524,23 +525,23 @@
 
               </p>
               <!--10 whatILove Tags-->
-              <button type="button" id="tagButton40" title="Remove Tag" style="display: none;" onclick="removeTag(4, 0)">Button 10</button>
-              <button type="button" id="tagButton41" title="Remove Tag" style="display: none;" onclick="removeTag(4, 1)">Button 11</button>
-              <button type="button" id="tagButton42" title="Remove Tag" style="display: none;" onclick="removeTag(4, 2)">Button 12</button>
-              <button type="button" id="tagButton43" title="Remove Tag" style="display: none;" onclick="removeTag(4, 3)">Button 13</button>
-              <button type="button" id="tagButton44" title="Remove Tag" style="display: none;" onclick="removeTag(4, 4)">Button 14</button>
-              <button type="button" id="tagButton45" title="Remove Tag" style="display: none;" onclick="removeTag(4, 5)">Button 15</button>
-              <button type="button" id="tagButton46" title="Remove Tag" style="display: none;" onclick="removeTag(4, 6)">Button 16</button>
-              <button type="button" id="tagButton47" title="Remove Tag" style="display: none;" onclick="removeTag(4, 7)">Button 17</button>
-              <button type="button" id="tagButton48" title="Remove Tag" style="display: none;" onclick="removeTag(4, 8)">Button 18</button>
-              <button type="button" id="tagButton49" title="Remove Tag" style="display: none;" onclick="removeTag(4, 9)">Button 19</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton40" title="Remove Tag"  onclick="removeTag(4, 0)">Button 10</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton41" title="Remove Tag"  onclick="removeTag(4, 1)">Button 11</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton42" title="Remove Tag"  onclick="removeTag(4, 2)">Button 12</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton43" title="Remove Tag"  onclick="removeTag(4, 3)">Button 13</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton44" title="Remove Tag"  onclick="removeTag(4, 4)">Button 14</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton45" title="Remove Tag"  onclick="removeTag(4, 5)">Button 15</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton46" title="Remove Tag"  onclick="removeTag(4, 6)">Button 16</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton47" title="Remove Tag"  onclick="removeTag(4, 7)">Button 17</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton48" title="Remove Tag"  onclick="removeTag(4, 8)">Button 18</button>
+              <button type="button" class="pdf-customization-tag" id="tagButton49" title="Remove Tag"  onclick="removeTag(4, 9)">Button 19</button>
             </div>
             <div class="col-12" id="whatILoveSuggestedTags">
-              <button type="button" id="suggestedTag40" class="addTagButton" title="Add Strengths20" onclick="addSuggestedTag(4, 0, 'Trouble Focusing')">+ Strengths20</button>
-              <button type="button" id="suggestedTag41" class="addTagButton" title="Add Strengths21" onclick="addSuggestedTag(4, 1, 'Motor Skills')">+ Strengths21</button>
-              <button type="button" id="suggestedTag42" class="addTagButton" title="Add Strengths22" onclick="addSuggestedTag(4, 2, 'Daily Medicine')">+ Strengths22</button>
-              <button type="button" id="suggestedTag43" class="addTagButton" title="Add Strengths23" onclick="addSuggestedTag(4, 3, 'Alphabet')">+ Strengths23</button>
-              <button type="button" id="suggestedTag44" class="addTagButton" title="Add Strengths24" onclick="addSuggestedTag(4, 4, 'Hearing Trouble')">+ Strengths24</button>
+              <button type="button" id="suggestedTag40" class="suggested-tag-button" title="Add Strengths20" onclick="addSuggestedTag(4, 0, 'Trouble Focusing')">+ Strengths20</button>
+              <button type="button" id="suggestedTag41" class="suggested-tag-button" title="Add Strengths21" onclick="addSuggestedTag(4, 1, 'Motor Skills')">+ Strengths21</button>
+              <button type="button" id="suggestedTag42" class="suggested-tag-button" title="Add Strengths22" onclick="addSuggestedTag(4, 2, 'Daily Medicine')">+ Strengths22</button>
+              <button type="button" id="suggestedTag43" class="suggested-tag-button" title="Add Strengths23" onclick="addSuggestedTag(4, 3, 'Alphabet')">+ Strengths23</button>
+              <button type="button" id="suggestedTag44" class="suggested-tag-button" title="Add Strengths24" onclick="addSuggestedTag(4, 4, 'Hearing Trouble')">+ Strengths24</button>
             </div>
             <div class="col-12" id="customWhatILoveTagEntryDiv">
               <label for="customWhatILoveTagEntry">Enter a Custom What I Love</label>
@@ -562,7 +563,7 @@
   <script src="/js/vendor/jquery.cycle2.min.js"></script>
   <script src="/js/vendor/featherlight.min.js"></script>
   <script src="/js/main.js"></script>
-  <script src="/pediatric-home/education-and-pediatric-cancer/unpkg.com_pdf-lib@1.17.1_dist_pdf-lib.min.js"></script>
+  <script src="/pediatrics/education-and-pediatric-cancer/unpkg.com_pdf-lib@1.17.1_dist_pdf-lib.min.js"></script>
   <script>
     /*------------------------------------------
       PDF Customization
@@ -607,7 +608,7 @@
 
     // Variables for PDF Loading, Customization, and Download
     // URL to retrieve the PDF template from
-    const url = "http://127.0.0.1:5500/pediatric-home/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf";
+    const url = "http://127.0.0.1:5500/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf";
     var existingPdfBytes;
     var pdfDoc;
     var helvetica;

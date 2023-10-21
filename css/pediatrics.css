@@ -1,0 +1,40 @@
+.full-width {
+    width: 100%;
+}
+
+.extra-padding {
+    padding-bottom: 10px;
+}
+
+.citation {
+    font-size: 75%;
+}
+
+#pdf-customization-lightbox {
+    /*border: 5px solid #ffffff;
+    border-radius: 5px;
+    padding: 5px;*/
+} h3 {
+    font-size: 32px;
+}
+
+.featherlight-content {
+    
+}
+
+.pdf-customization-tag {
+    display: none;
+
+}
+
+.suggested-tag-button {
+    background: #ffffff;
+    /*color: #1f9cd0; Could be added back depending on the text color we want.*/
+    border: 2px solid #1f9cd0;
+    border-radius: 20%;
+    font-size: 18px;
+}
+
+.pdf-customization-input {
+    background: #ffffff;
+}
