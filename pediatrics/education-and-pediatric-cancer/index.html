@@ -606,17 +606,10 @@
       readImage(file);
     });
 
-    // Variables for PDF Loading, Customization, and Download
     // URL to retrieve the PDF template from
     const url = "http://127.0.0.1:5500/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf";
-    var existingPdfBytes;
-    var pdfDoc;
-    var helvetica;
-    var fontSize;
-    var pages;
-    var firstPage;
-    var width;
-    var height;
+    // Variables for PDF Loading, Customization, and Download
+    var existingPdfBytes, pdfDoc, helvetica, largeFontSize, mediumFontSize, smallFontSize, pages, firstPage, width, height;
 
     // CONTROLLER FUNCTION
     async function personalizePDF() {
@@ -808,7 +801,9 @@
 
       // Load Helvetica Font
       helvetica = await pdfDoc.embedFont(StandardFonts.Helvetica);
-      fontSize = 64;
+      largeFontSize = 64;
+      mediumfontSize = 48;
+      smallFontSize = 40;
 
       // Load the first page and get dimensions
       pages = pdfDoc.getPages();
@@ -858,7 +853,98 @@
     };
 
     async function drawTags() {
-      // UNFINISHED
+      // These arrays hold the x and y values for each of the tags to be drawn
+      const yVals = [60, 880, 1695];
+      const box1XVals = [1362, 1427, 1489, 1554];
+      const box2XVals = [1732, 1794, 1858, 1922];
+      const box3XVals = [2102, 2166, 2230, 2293];
+      const box4XVals = [2472, 2536, 2600, 2664];
+      const box5XVals = [2837, 2902, 2966, 3029];
+      
+      var index = 0;
+      while (addedStrengthTags[index] != undefined) {
+        for (var i=0; i<4; i++) { // for loop for Strengths
+          for (var j=0; j<3; j++) {
+            firstPage.drawText(addedStrengthTags[index], {
+              x: box1XVals[j],
+              y: yVals[i],
+              size: smallFontSize,
+              font: helvetica,
+              color: rgb(0,0,0)
+            });
+            index++;
+          }
+        };
+      };
+      index = 0; // Reset index
+
+      var index = 0;
+      while (addedWorksForMeTags[index] != undefined) {
+        for (var i=0; i<4; i++) { // for loop for Works For Me
+          for (var j=0; j<3; j++) {
+            firstPage.drawText(addedWorksForMeTags[index], {
+              x: box2XVals[j],
+              y: yVals[i],
+              size: smallFontSize,
+              font: helvetica,
+              color: rgb(0,0,0)
+            });
+            index++;
+          }
+        };
+      };
+      index = 0; // Reset index
+
+      var index = 0;
+      while (addedDoesntWorkTags[index] != undefined) {
+        for (var i=0; i<4; i++) { // for loop for Doesnt Work For Me
+          for (var j=0; j<3; j++) {
+            firstPage.drawText(addedDoesntWorkTags[index], {
+              x: box3XVals[j],
+              y: yVals[i],
+              size: smallFontSize,
+              font: helvetica,
+              color: rgb(0,0,0)
+            });
+            index++;
+          }
+        };
+      };
+      index = 0; // Reset index
+
+      var index = 0;
+      while (addedWorkingOnTags[index] != undefined) {
+        for (var i=0; i<4; i++) { // for loop for Working On
+          for (var j=0; j<3; j++) {
+            firstPage.drawText(addedWorkingOnTags[index], {
+              x: box4XVals[j],
+              y: yVals[i],
+              size: smallFontSize,
+              font: helvetica,
+              color: rgb(0,0,0)
+            });
+            index++;
+          }
+        };
+      };
+      index = 0; // Reset index
+
+      var index = 0;
+      while (addedWhatILoveTags[index] != undefined) {
+        for (var i=0; i<4; i++) { // for loop for What I Love
+          for (var j=0; j<3; j++) {
+            firstPage.drawText(addedWhatILoveTags[index], {
+              x: box5XVals[j],
+              y: yVals[i],
+              size: smallFontSize,
+              font: helvetica,
+              color: rgb(0,0,0)
+            });
+            index++;
+          }
+        };
+      };
+      index = 0; // Reset index
     };
 
     async function addImage() {
