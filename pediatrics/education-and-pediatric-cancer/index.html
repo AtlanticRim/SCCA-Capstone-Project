@@ -623,8 +623,8 @@
       await loadPDF(); // Await keyword so draw functions aren't triggered before PDF is loaded.
       drawBasicInformation();
       drawTags();
-      addImage();
-      downloadPDF();
+      await addImage();
+      await downloadPDF();
     };
     // END CONTROLLER FUNCTION
 
@@ -811,19 +811,18 @@
 
       // Load the first page and get dimensions
       pages = pdfDoc.getPages();
-      console.log(pages); //DEBUG
       firstPage = pages[0];
       width = firstPage.getWidth();
       height = firstPage.getHeight();
     };
 
-    async function drawBasicInformation() {
+    function drawBasicInformation() {
       
       // Draw Child Name
       firstPage.drawText(childName, {
           x: 1775,
           y: 990,
-          size: fontSize,
+          size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
           });
@@ -832,7 +831,7 @@
       firstPage.drawText(parentName, {
           x: 50,
           y: 1050,
-          size: fontSize,
+          size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
           });
@@ -841,7 +840,7 @@
       firstPage.drawText(phoneNumber, {
           x: 50,
           y: 1125,
-          size: fontSize,
+          size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
           });
@@ -850,13 +849,13 @@
       firstPage.drawText(email, {
           x: 50,
           y: 1200,
-          size: fontSize,
+          size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
           });
     };
 
-    async function drawTags() {
+    function drawTags() {
       // These arrays hold the x and y values for each of the tags to be drawn
       const yVals = [60, 880, 1695];
       const box1XVals = [1362, 1427, 1489, 1554];
@@ -977,22 +976,18 @@
     async function downloadPDF() {
       // Save and download the PDF
       const pdfBytes = await pdfDoc.save();
+      let blob = new Blob(pdfBytes, { type: 'pdf'});
+      // Create an anchor tag set to download blob on click
+      let link = document.createElement('a');
+      link.download = 'customizedPDF.pdf';
+      link.href = URL.createObjectURL(blob);
+      // Simulate a click
+      link.click();
+      // Revoke Object URL once download has been initiated
+      URL.revokeObjectURL(link.href);
 
-      // // DEBUG This function was throwing an error, I spelled out browser.downloads.download to see if it recognizes it
-      // // NOTE: This function not supported in Safari, Firefox for Android, and Safari for iOS
-      // browser.downloads.download(pdfBytes, "SCCA_Personalized_PDF.pdf");
-
-      // var link = document.createElement('a');
-      // link.style = "display:none;";
-      // link.href = pdfBytes;
-      // link.download = "Meet My Child";
-      // link.dispatchEvent(new MouseEvent('click'));
-
-      const pdfBytesBlobURL = URL.createObjectURL(pdfBytes);
-      window.open(pdfBytesBlobURL, '_blank');
     };
     // END PDF CUSTOMIZATION AND DOWNLOAD FEATURE
-
   </script>
 
 </body>
