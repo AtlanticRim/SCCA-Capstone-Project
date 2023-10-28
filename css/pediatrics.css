@@ -38,3 +38,99 @@
 .pdf-customization-input {
     background: #ffffff;
 }
+
+/*Pediatric Resource Guide nav CSS
+Based off of the Cancer Plan nav CSS */
+.pediatric-resource-guide-nav {
+    border-top: .5px solid #434d54;
+    position: relative; }
+    .pediatric-resource-guide-nav a {
+      display: block;
+      margin-top: 10px;
+      color: #434d54;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: .02em;
+      line-height: 1.4em; }
+    .pediatric-resource-guide-nav .col-lg {
+      position: relative;
+      padding-left: 10px;
+      padding-right: 10px; }
+      .pediatric-resource-guide-nav .col-lg:before {
+        content: "";
+        position: absolute;
+        top: -3px;
+        left: 10px;
+        height: 5px;
+        width: 40px;
+        transition: width .3s ease; }
+      .pediatric-resource-guide-nav .col-lg:hover:before {
+        width: 60px; }
+      .pediatric-resource-guide-nav .col-lg.purpose-link:before {
+        background-color: #704289; }
+      .pediatric-resource-guide-nav .col-lg.equity-link:before {
+        background-color: #1f9cd0; }
+      .pediatric-resource-guide-nav .col-lg.prevention-link:before {
+        background-color: #b1e1f5; }
+      .pediatric-resource-guide-nav .col-lg.detection-link:before {
+        background-color: #f06543; }
+      .pediatric-resource-guide-nav .col-lg.survivorship-link:before {
+        background-color: #ffc759; }
+      .pediatric-resource-guide-nav .col-lg.policy-link:before {
+        background-color: #c7d66d; }
+      .pediatric-resource-guide-nav .col-lg.evaluation-link:before {
+        background-color: #67911d; }
+      .pediatric-resource-guide-nav .col-lg.trends-link:before {
+        background-color: #b9a8ba; }
+    @media screen and (max-width: 991px) {
+      .pediatric-resource-guide-nav .pediatric-resource-guide-title h1 {
+        color: #876aa9;
+        font-weight: 500;
+        font-size: 32px;
+        text-align: center; }
+        .pediatric-resource-guide-nav .pediatric-resource-guide-title h1 span {
+          font-family: "Times New Roman", serif;
+          font-style: italic; }
+      .pediatric-resource-guide-nav .nav-container {
+        overflow: hidden;
+        max-height: 0px;
+        position: absolute;
+        left: 0;
+        top: 100%;
+        width: 100%;
+        background: #EDF2FB;
+        transition: max-height .3s ease;
+        z-index: 1;
+        box-shadow: 0px 48px 43px -48px black; }
+        .pediatric-resource-guide-nav .nav-container .container {
+          padding: 40px 15px;
+          border-top: .5px solid #434d54; }
+        .pediatric-resource-guide-nav .nav-container.active {
+          max-height: 400px; }
+          .pediatric-resource-guide-nav .nav-container.active a {
+            background: white;
+            border-top: 3px solid;
+            min-height: 49px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            padding-left: 5px;
+            padding-right: 5px; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg:before {
+            display: none; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.purpose-link a {
+            border-color: #704289; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.equity-link a {
+            border-color: #1f9cd0; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.prevention-link a {
+            border-color: #b1e1f5; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.detection-link a {
+            border-color: #f06543; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.survivorship-link a {
+            border-color: #ffc759; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.policy-link a {
+            border-color: #c7d66d; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.evaluation-link a {
+            border-color: #67911d; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.trends-link a {
+            border-color: #b9a8ba; } }
