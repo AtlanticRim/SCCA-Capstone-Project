@@ -138,3 +138,89 @@ Based off of the Cancer Plan nav CSS */
             border-color: #67911d; }
           .pediatric-resource-guide-nav .nav-container.active .col-lg.trends-link a {
             border-color: #b9a8ba; } }
+
+.resource-guide-navigation {
+  background: #eef2fa;
+  overflow-x: hidden; }
+  .resource-guide-navigation img {
+    transform: translateX(85px);
+    max-width: 495px; }
+  .resource-guide-navigation h2 {
+    margin-bottom: 40px; }
+  .resource-guide-navigation .resource-guide-subpages .resource-guide-subpage {
+    border-top: 2px solid #cacaca;
+    padding: 17px 0px;
+    position: relative;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    padding-left: 62px;
+    color: #434d54; }
+    .resource-guide-navigation .resource-guide-subpages .resource-guide-subpage:last-child {
+      border-bottom: 2px solid #cacaca; }
+    .resource-guide-navigation .resource-guide-subpages .resource-guide-subpage a {
+      color: #434d54; }
+      .resource-guide-navigation .resource-guide-subpages .resource-guide-subpage a:hover {
+        color: #1a1d1f; }
+  .resource-guide-navigation .plus {
+    width: 38px;
+    height: 38px;
+    padding: 8px 0px;
+    text-align: center;
+    display: inline-block;
+    position: absolute;
+    top: 7px;
+    left: 0px; }
+    .resource-guide-navigation .plus img {
+      transform: none; }
+
+/* Plus colors for Pediatric Resource Guide */
+.diagnosis-defined-bg {
+  background: #b9a8ba;
+}
+.get-started-bg {
+  background: #b9a8ba;
+}
+.searchable-info-bg {
+  background: #b9a8ba;
+}
+.support-all-ages-bg {
+  background: #b9a8ba;
+}
+.support-young-adults-bg {
+  background: #b9a8ba;
+}
+.financial-resources-bg {
+  background: #b9a8ba;
+}
+.travel-housing-bg {
+  background: #b9a8ba;
+}
+.clinical-trials-bg {
+  background: #b9a8ba;
+}
+.quality-of-life-bg {
+  background: #b9a8ba;
+}
+.hospice-bereavement-bg {
+  background: #b9a8ba;
+}
+.fun-bg {
+  background: #b9a8ba;
+}
+.camps-retreats-bg {
+  background: #b9a8ba;
+}
+.experiences-wishes-bg {
+  background: #b9a8ba;
+}
+.k-12-ed-bg {
+  background: #b9a8ba;
+}
+.higher-ed-bg {
+  background: #b9a8ba;
+}
+.pediatric-advocacy-bg {
+  background: #b9a8ba;
+}
