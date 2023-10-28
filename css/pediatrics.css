@@ -2,8 +2,12 @@
     width: 100%;
 }
 
+.standard-min-height {
+  min-height: 100px;
+}
+
 .extra-padding {
-    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .citation {
