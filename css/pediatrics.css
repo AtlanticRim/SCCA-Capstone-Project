@@ -6,10 +6,6 @@
   min-height: 100px;
 }
 
-.extra-padding {
-    padding-top: 10px;
-}
-
 .pediatric-resource-guide-heading {
 font-size: 150%;
 }
@@ -22,17 +18,12 @@ font-size: 150%;
     /*border: 5px solid #ffffff;
     border-radius: 5px;
     padding: 5px;*/
-} h3 {
+} #pdf-customization-lightbox h3 {
     font-size: 32px;
-}
-
-.featherlight-content {
-    
 }
 
 .pdf-customization-tag {
     display: none;
-
 }
 
 .suggested-tag-button {
