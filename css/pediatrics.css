@@ -224,3 +224,50 @@ Based off of the Cancer Plan nav CSS */
 .pediatric-advocacy-bg {
   background: #b9a8ba;
 }
+
+.parent-cta {
+  background: url("/img/parents.png");
+  background-size: cover;
+  background-position: right;
+  margin-top: 0px; }
+  .parent-cta ul {
+    margin-top: 34px; }
+    .parent-cta ul .icon-list:before {
+      color: #b1e1f5; }
+
+.cancer-plan.parent-cta .box-graphic {
+  padding: 30px 19px;
+  font-size: 3.5em;
+  max-width: none;
+  height: auto;
+  color: #b1e1f5;
+  border: 2px solid #b1e1f5; }
+  .cancer-plan.parent-cta .box-graphic .small-text {
+    font-size: 21px;
+    margin-top: 26px;
+    margin-bottom: 14px; }
+
+
+
+.educator-cta {
+      background: url("/img/educators.png");
+      background-size: cover;
+      background-position: right;
+      margin-top: 0px; }
+  .educator-cta ul {
+        margin-top: 34px; }
+    .educator-cta ul .icon-list:before {
+          color: #b1e1f5; }
+    
+.cancer-plan.educator-cta .box-graphic {
+      padding: 30px 19px;
+      font-size: 3.5em;
+      max-width: none;
+      height: auto;
+      color: #b1e1f5;
+      border: 2px solid #b1e1f5; }
+  .cancer-plan.educator-cta .box-graphic .small-text {
+        font-size: 21px;
+        margin-top: 26px;
+        margin-bottom: 14px; }
+
