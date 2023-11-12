@@ -221,10 +221,7 @@
   <section class="content">
     <div class="hero">
 
-
-
-    
-
+      
     </div> <!-- Hero div for blank space between header and content-->
     <div class="page-content">
       <!-- Parent Section Introduction-->
@@ -242,8 +239,8 @@
                 <hr>
                 <h2 id="parents-and-guardians">Parent Section</h2>
                 <p>This section of the toolkit will help parents learn how to work with personnel and educators at their child’s school to meet their child’s needs after their cancer diagnosis.</p>
-                <p style="display:none;"><b>Customize a Meet My Child Flyer.</b></p>
-                <p style="">Take the first step to help educators get to know your child better and how they can best educate them by completing a <a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">"Get To Know My Child"</a> letter for your child.</p> <!--DEBUG data-featherlight-root="header"-->
+                <p><b>Customize a Meet My Child Flyer.</b></p>
+                <p>Take the first step to help educators get to know your child better and how they can best educate them by completing a <a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">"Get To Know My Child"</a> letter for your child.</p>
               </div>
             </div> <!--End main content-->
           </div>
@@ -307,13 +304,14 @@
                 <hr>
                 <h2 id="educators">Educator Section</h2>
                 <p>This section of the toolkit contains information relating to how educators and school personnel can assist and support children with a cancer diagnosis in a school setting.</p>
-                <p style="display:none;"><b>Customize a Meet My Child Flyer.</b></p>
-                <p style="">Take the first step to help parents share how you can best educate their child better after their cancer diagnosis by providing a <a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">"Get To Know My Child"</a> parent letter which they can complete to outline the educational needs for your student.</p> <!--DEBUG data-featherlight-root="header"-->
+                <p><b>Customize a Meet My Child Flyer.</b></p>
+                <p>Take the first step to help parents share how you can best educate their child better after their cancer diagnosis by providing a <a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">"Get To Know My Child"</a> parent letter which they can complete to outline the educational needs for your student.</p>
               </div>
             </div> <!--End main content-->
           </div>
         </div>
       </div><!--End Educator Section Introduction-->
+
             <!-- Education Section Headers-->
             <div class="cancer-plan educator-cta">
               <div class="container">
@@ -384,7 +382,7 @@
                 <div class="row">
                   <div class="col-12">
                     <p>This section of the toolkit will help parents learn how to work with personnel and educators at their child’s school to meet their child’s needs after their cancer diagnosis.</p>
-                    <p ><a href="/pediatrics/education-and-pediatric-cancer/late-effects/index.html">Common Challenges & Late Effects</a></p>
+                    <p><a href="/pediatrics/education-and-pediatric-cancer/late-effects/index.html">Common Challenges & Late Effects</a></p>
                     <p>Most Common Physical Challenges</p>
                     <p>Most Common Cognitive Challenges</p>
                     <p>Most Common Psycho-Social & Emotional Challenges</p>
@@ -410,13 +408,9 @@
                     <p><b>Special precautions.</b> Educators and school administrators will need to know if there are actions that need to be taken in certain situations that may arise during the school day. For instance, if the child has a weakened immune system, and other children in the class are sick or feverish they will need to know what to do in this situation.<sup><a href="#citation2" class="citation">[2]</a></sup></p>
                     <p><b>Emergency Contacts.</b> The school nurse and administrators would need access to who to contact in case of emergency or to answer questions the school may have. This includes a child’s primary care providers and nurses.<sup><a href="#citation1" class="citation">[1]</a></sup></p>
                     <a href="https://www.askccf.org/_files/ugd/44e813_74672b9bfdf64b0d95f339b5cbf2829e.pdf"><p>ASK Childhood Cancer Foundation Parent Section [PDF]</p></a>
-                    <!--Note: These two paragraphs will be hidden until the Customize PDF feature is finished.-->
-                    <p style="display:none;"><b>Customize a Meet My Child Flyer.</b></p>
-                    <p style=""><a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">Open element in lightbox</a></p> <!--DEBUG data-featherlight-root="header"-->
                   </div>
-                </div><!--End row-->
-              </div>
-              <!--End section for Parents and Guardians -->
+                </div>
+              </div><!--End section for Parents and Guardians -->
 
               <!-- Section for Educators -->
               <div id="educators" class="text-left py-2">
@@ -448,17 +442,13 @@
                   </div>
                 </div>
               <!-- End section for citations -->
-              </div>
-              <!--End section for Educators-->
+              <!-- DEBUG Link to open PDF Customization feature lightbox-->
+              <p><a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">PDF Customization TEST</a></p>
+              </div><!--End section for Educators-->
             </div><!--End main content-->
           </div><!--End Bootstrap column-->
-
-
-
-
-
         </div> <!--End row top align--> 
-    </div><!--End container-->
+      </div><!--End container-->
     </div><!--End page content-->
   </section> <!-- End section content -->
 
@@ -764,7 +754,6 @@
     // Variables and basic update function for image upload
     var imageAsUint8Array;
     const imageUpload = document.getElementById("imageUpload");
-    // DEBUG note: This event listener will not work because of the way Featherlight puts the content into a generated modal
     imageUpload.addEventListener('change', (event) => {
       const file = event.target.files[0];
       readImage(file);
@@ -932,7 +921,6 @@
         document.getElementById("tagButton".concat(sectionID).concat(i)).style.display = 'none';
         if (tagArray != undefined && tagArray[i] != undefined) {
           document.getElementById("tagButton".concat(sectionID).concat(i)).textContent = tagArray[i];
-          console.log("Changed to inline" + "tagButton".concat(sectionID).concat(i)); //DEBUG
           document.getElementById("tagButton".concat(sectionID).concat(i)).style.display = 'inline';
         }
       }
