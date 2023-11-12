@@ -19,12 +19,14 @@ font-size: 150%;
   position: center center;
 }
 
-#pdf-customization-lightbox {
-    /*border: 5px solid #ffffff;
-    border-radius: 5px;
-    padding: 5px;*/
-} #pdf-customization-lightbox h3 {
-    font-size: 32px;
+.featherlight .featherlight-content {
+  /*Override of style in main.css specifically for the PDF Customization div*/
+  width: 100%;
+  max-width:800px;
+}
+
+#pdf-customization-lightbox h3 {
+  font-size: 32px;
 }
 
 .pdf-customization-tag {
