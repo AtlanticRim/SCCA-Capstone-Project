@@ -73,22 +73,39 @@ Based off of the Cancer Plan nav CSS */
         transition: width .3s ease; }
       .pediatric-resource-guide-nav .col-lg:hover:before {
         width: 60px; }
-      .pediatric-resource-guide-nav .col-lg.purpose-link:before {
+      .pediatric-resource-guide-nav .col-lg.diagnosis-defined-link:before {
         background-color: #704289; }
-      .pediatric-resource-guide-nav .col-lg.equity-link:before {
+      .pediatric-resource-guide-nav .col-lg.get-started-link:before {
         background-color: #1f9cd0; }
-      .pediatric-resource-guide-nav .col-lg.prevention-link:before {
+      .pediatric-resource-guide-nav .col-lg.searchable-link:before {
         background-color: #b1e1f5; }
-      .pediatric-resource-guide-nav .col-lg.detection-link:before {
+      .pediatric-resource-guide-nav .col-lg.support-all-ages-link:before {
         background-color: #f06543; }
-      .pediatric-resource-guide-nav .col-lg.survivorship-link:before {
+      .pediatric-resource-guide-nav .col-lg.support-young-adults-link:before {
         background-color: #ffc759; }
-      .pediatric-resource-guide-nav .col-lg.policy-link:before {
+      .pediatric-resource-guide-nav .col-lg.financial-resources-link:before {
         background-color: #c7d66d; }
-      .pediatric-resource-guide-nav .col-lg.evaluation-link:before {
+      .pediatric-resource-guide-nav .col-lg.travel-housing-link:before {
         background-color: #67911d; }
-      .pediatric-resource-guide-nav .col-lg.trends-link:before {
+      .pediatric-resource-guide-nav .col-lg.clinical-trials-link:before {
         background-color: #b9a8ba; }
+      .pediatric-resource-guide-nav .col-lg.quality-of-life-link:before {
+        background-color: #704289; }
+      .pediatric-resource-guide-nav .col-lg.hospice-bereavement-link:before {
+        background-color: #1f9cd0; }
+      .pediatric-resource-guide-nav .col-lg.fun-link:before {
+        background-color: #b1e1f5; }
+      .pediatric-resource-guide-nav .col-lg.camps-retreats-link:before {
+        background-color: #f06543; }
+      .pediatric-resource-guide-nav .col-lg.experiences-wishes-link:before {
+        background-color: #ffc759; }
+      .pediatric-resource-guide-nav .col-lg.k-12-ed-link:before {
+        background-color: #c7d66d; }
+      .pediatric-resource-guide-nav .col-lg.higher-ed-link:before {
+        background-color: #67911d; }
+      .pediatric-resource-guide-nav .col-lg.pediatric-advocacy-link:before {
+        background-color: #b9a8ba; }
+
     @media screen and (max-width: 991px) {
       .pediatric-resource-guide-nav .pediatric-resource-guide-title h1 {
         color: #876aa9;
@@ -124,22 +141,39 @@ Based off of the Cancer Plan nav CSS */
             padding-right: 5px; }
           .pediatric-resource-guide-nav .nav-container.active .col-lg:before {
             display: none; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.purpose-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.diagnosis-defined-link a {
             border-color: #704289; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.equity-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.get-started-link a {
             border-color: #1f9cd0; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.prevention-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.searchable-link a {
             border-color: #b1e1f5; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.detection-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.support-all-ages-link a {
             border-color: #f06543; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.survivorship-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.support-young-adults-link a {
             border-color: #ffc759; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.policy-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.financial-resources-link a {
             border-color: #c7d66d; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.evaluation-link a {
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.travel-housing-link a {
             border-color: #67911d; }
-          .pediatric-resource-guide-nav .nav-container.active .col-lg.trends-link a {
-            border-color: #b9a8ba; } }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.clinical-trials-link a {
+            border-color: #b9a8ba; } 
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.quality-of-life-link a {
+            border-color: #704289; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.hospice-bereavement-link a {
+            border-color: #1f9cd0; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.fun-link a {
+            border-color: #b1e1f5; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.camps-retreats-link a {
+            border-color: #f06543; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.experiences-wishes-link a {
+            border-color: #ffc759; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.k-12-ed-link a {
+            border-color: #c7d66d; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.higher-ed-link a {
+            border-color: #67911d; }
+          .pediatric-resource-guide-nav .nav-container.active .col-lg.pediatric-advocacy-link a {
+            border-color: #b9a8ba; }}
+          
 
 .resource-guide-navigation {
   background: #eef2fa;
