@@ -22,11 +22,15 @@ font-size: 150%;
 .featherlight .featherlight-content {
   /*Override of style in main.css specifically for the PDF Customization div*/
   width: 100%;
-  max-width:800px;
+  max-width: 1200px;
 }
 
-#pdf-customization-lightbox h3 {
+#pdf-customization-lightbox {
+  /*background: #ffffff;*/
+
+  h3 {
   font-size: 32px;
+  }
 }
 
 .pdf-customization-tag {
