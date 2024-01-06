@@ -266,7 +266,7 @@ Based off of the Cancer Plan nav CSS */
 }
 
 .parent-cta {
-  background: url("/img/parents.png");
+  background: url("../img/ET_ParentsBanner.png");
   background-size: cover;
   background-position: right;
   margin-top: 0px; }
@@ -290,7 +290,7 @@ Based off of the Cancer Plan nav CSS */
 
 
 .educator-cta {
-      background: url("/img/educators.png");
+      background: url("../img/ET_EducatorsBanner.png");
       background-size: cover;
       background-position: right;
       margin-top: 0px; }
