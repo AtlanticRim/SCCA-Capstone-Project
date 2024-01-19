@@ -435,19 +435,25 @@
         <div class="col-12" id="informationEntry">
           <h2 class="py-2">1. Enter Basic Information</h2>
           
-          <label for="childFirstName" class="pt-2">Child's First Name</label><br>
-          <input type="text" id="childFirstName" name="childFirstName"><br>
+          <div class="row">
+          <div class="col-lg-6">
+            <label for="childFirstName" class="pt-2">Child's First Name</label><br>
+            <input type="text" id="childFirstName" name="childFirstName"><br>
 
-          <label for="childLastName" class="pt-2">Child's Last Name</label><br>
-          <input type="text" id="childLastName" name="childLastName"><br>
-          <p id="childNameError"></p>
+            <label for="childLastName" class="pt-2">Child's Last Name</label><br>
+            <input type="text" id="childLastName" name="childLastName"><br>
+            <p id="childNameError"></p>
+          </div>
 
-          <label for="parentFirstName" class="pt-2">Parent/Guardian's First Name</label><br>
-          <input type="text" id="parentFirstName" name="parentFirstName"><br>
+          <div class="col-lg-6">
+            <label for="parentFirstName" class="pt-2">Parent/Guardian's First Name</label><br>
+            <input type="text" id="parentFirstName" name="parentFirstName"><br>
 
-          <label for="parentLastName" class="pt-2">Parent/Guardian's Last Name</label><br>
-          <input type="text" id="parentLastName" name="parentLastName"><br>
-          <p id="parentNameError"></p>
+            <label for="parentLastName" class="pt-2">Parent/Guardian's Last Name</label><br>
+            <input type="text" id="parentLastName" name="parentLastName"><br>
+            <p id="parentNameError"></p>
+          </div>
+          </div>
 
           <h2 class="py-2">2. Enter Your Contact Information (optional)</h2>
           <label for="phoneNumber">Phone Number</label><br>
@@ -494,7 +500,7 @@
         </div>
         <div class="col-12 py-2" id="customStrengthTagEntryDiv">
           <label for="customStrengthTagEntry">Enter a Custom Strength</label>
-          <input type="text" id="customStrengthTagEntry" title="Custom Strength Tag Entry">
+          <input type="text" id="customStrengthTagEntry" title="Custom Strength Tag Entry" maxlength="20">
           <button type="submit" id="customStrengthTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(0)">Add Custom Tag</button>
         </div>
       </div>
@@ -526,7 +532,7 @@
         </div>
         <div class="col-12 py-2" id="customWorksForMeTagEntryDiv">
           <label for="customWorksForMeTagEntry">Enter a Custom Works For Me</label>
-          <input type="text" id="customWorksForMeTagEntry" title="Custom Works For Me Tag Entry">
+          <input type="text" id="customWorksForMeTagEntry" title="Custom Works For Me Tag Entry" maxlength="20">
           <button type="submit" id="customWorksForMeTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(1)">Add Custom Tag</button>
         </div>
       </div>
@@ -558,7 +564,7 @@
         </div>
         <div class="col-12 py-2" id="customDoesntWorkTagEntryDiv">
           <label for="customDoesntWorkTagEntry">Enter a Custom Doesn't Work For Me</label>
-          <input type="text" id="customDoesntWorkTagEntry" title="Custom Doesn't Work For Me Tag Entry">
+          <input type="text" id="customDoesntWorkTagEntry" title="Custom Doesn't Work For Me Tag Entry" maxlength="20"> 
           <button type="submit" id="customDoesntWorkTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(2)">Add Custom Tag</button>
         </div>
       </div>
@@ -590,7 +596,7 @@
         </div>
         <div class="col-12 py-2" id="customWorkingOnTagEntryDiv">
           <label for="customWorkingOnTagEntry">Enter a Custom Working On</label>
-          <input type="text" id="customWorkingOnTagEntry" title="Custom Working On Tag Entry">
+          <input type="text" id="customWorkingOnTagEntry" title="Custom Working On Tag Entry" maxlength="20">
           <button type="submit" id="customWorkingOnTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(3)">Add Custom Tag</button>
         </div>
       </div>
@@ -622,7 +628,7 @@
         </div>
         <div class="col-12 py-2" id="customWhatILoveTagEntryDiv">
           <label for="customWhatILoveTagEntry">Enter a Custom What I Love</label>
-          <input type="text" id="customWhatILoveTagEntry" title="Custom What I Love Tag Entry">
+          <input type="text" id="customWhatILoveTagEntry" title="Custom What I Love Tag Entry" maxlength="20">
           <button type="submit" id="customWhatILoveTagEntrySubmit" onclick="addCustomTag(4)">Add Custom Tag</button>
         </div>
       </div>
@@ -660,19 +666,19 @@
 
     // Tag Elements - Strengths
     const addedStrengthTags = new Array();
-    const customStrengthTagEntry = document.getElementById("customStrengthTagEntry");
+    //const customStrengthTagEntry = document.getElementById("customStrengthTagEntry");
     // Tag Elements - WorksForMe
     const addedWorksForMeTags = new Array();
-    const customWorksForMeTagEntry = document.getElementById("customWorksForMeTagEntry");
+    //const customWorksForMeTagEntry = document.getElementById("customWorksForMeTagEntry");
     // Tag Elements - doesntWork
     const addedDoesntWorkTags = new Array();
-    const customDoesntWorkTagEntry = document.getElementById("customDoesntWorkTagEntry");
+    //const customDoesntWorkTagEntry = document.getElementById("customDoesntWorkTagEntry");
     // Tag Elements - workingOn
     const addedWorkingOnTags = new Array();
-    const customWorkingOnTagEntry = document.getElementById("customWorkingOnTagEntry");
+    //const customWorkingOnTagEntry = document.getElementById("customWorkingOnTagEntry");
     // Tag Elements - whatILove
     const addedWhatILoveTags = new Array();
-    const customWhatILoveTagEntry = document.getElementById("customWhatILoveTagEntry");
+    //const customWhatILoveTagEntry = document.getElementById("customWhatILoveTagEntry");
 
     // Variables and basic update function for image upload
     var imageAsUint8Array;
@@ -703,29 +709,38 @@
     // BASIC INFORMATION INPUT FEATURE
     function getInfo() {
       // This method retrieves the information from the forms and puts it in the global variables.
+      // The values of the fields are then cast to Strings to prevent injection attacks
 
-      const childFirstName = document.getElementById("childFirstName").value;
-      const childLastName = document.getElementById("childLastName").value;
-      const parentFirstName = document.getElementById("parentFirstName").value;
-      const parentLastName = document.getElementById("parentLastName").value;
+      const childFirstName = document.getElementById("childFirstName").value.toString();
+      const childLastName = document.getElementById("childLastName").value.toString();
+      const parentFirstName = document.getElementById("parentFirstName").value.toString();
+      const parentLastName = document.getElementById("parentLastName").value.toString();
 
       childName = childFirstName + ' ' +  childLastName;
       parentName = parentFirstName + ' ' + parentLastName;
 
-      phoneNumber = document.getElementById("phoneNumber").value;
-      email = document.getElementById("email").value;
+      phoneNumber = document.getElementById("phoneNumber").value.toString();
+      email = document.getElementById("email").value.toString();
     };
 
     function regExCheck() {
       // This method tests the form inputs against RegEx patterns
 
-      const nameRegEx = /[a-zA-Z-'ñÑ., ]/g;
+      const nameRegEx = /[^a-zA-Z-'ñÑ., ]/g;
 
       const okChildName = nameRegEx.exec(childName);
-      if (!okChildName) document.getElementById("childNameError").textContent = "Please enter a valid name.";
+      if (okChildName != null) {
+        // If child name contains unexpected characters, dispaly explanatory text and throw an error
+        document.getElementById("childNameError").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
+        throw new Error("Child name failed RegEx check. RegEx result array: " + okChildName);
+      }
 
       const okParentName = nameRegEx.exec(parentName);
-      if (!okParentName) document.getElementById("parentNameError").textContent = "Please enter a valid name.";
+      if (okParentName != null) {
+        // If parent name contains unexpected characters, dispaly explanatory text and throw an error
+        document.getElementById("parentNameError").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
+        throw new Error("Parent name failed RegEx check. RegEx result array: " + okParentName);
+      } 
 
       /*
       This phone validator RegEx expression was written by Branislav Dinic on Regexr.com
@@ -733,7 +748,11 @@
       */
       const phoneRegEx = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/g;
       const okPhone = phoneRegEx.exec(phoneNumber);
-      if (!okPhone) document.getElementById("phoneNumberError").textContent = "Please enter a valid phone number.";
+      if (okPhone != null) {
+        // If phone number contains unexpected characters, dispaly explanatory text and throw an error
+        document.getElementById("phoneNumberError").textContent = "Please enter a valid phone number.";
+        throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
+      } 
       
       /*
       This email validator RegEx expression was written by Tripleaxis on Regexr.com
@@ -741,7 +760,11 @@
       */ 
       const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
       const okEmail = emailRegEx.exec(email);
-      if (!okEmail) document.getElementById("emailError").textContent = "Please enter a valid email.";
+      if (okEmail != null) {
+        // If email contains unexpected characters, dispaly explanatory text and throw an error
+        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
+      } 
     };
     // END BASIC INFORMATION INPUT FEATURE
 
@@ -766,61 +789,92 @@
     };
 
     function addCustomTag(sectionID) {
-      var tagText;
+      /* tagText stores the text of a field before it is cleared, specifiedTagArray holds the name of one of the five possible tag arrays, 
+      tagEntryID holds the string ID attribute of a text field, and tagEntrySubmitID holds the string ID of the submit button that corresponds to tagEntryID's field
+      */
+      var tagText, specificTagArray, tagEntryID, tagEntrySubmitID;
 
-      /*
-      The sectionID specifies which section the tag entry is in, and thus what array the custom tag should be added to.
-      In each switch case:
+      switch (sectionID) {
+        case 0: 
+          specificTagArray = addedStrengthTags;
+          tagEntryID = "customStrengthTagEntry";
+          tagEntrySubmitID = "customStrengthTagEntrySubmit";
+          break;
+        case 1: 
+          specificTagArray = addedWorksForMeTags;
+          tagEntryID = "customWorksForMeTagEntry";
+          tagEntrySubmitID = "customWorksForMeTagEntrySubmit";
+          break;
+        case 2:
+          specificTagArray = addedDoesntWorkTags;
+          tagEntryID = "customDoesntWorkTagEntry";
+          tagEntrySubmitID = "customDoesntWorkTagEntrySubmit";
+          break;
+        case 3: 
+          specificTagArray = addedWorkingOnTags;
+          tagEntryID = "customWorkingOnTagEntry";
+          tagEntrySubmitID = "customWorkingOnTagEntrySubmit";
+          break;
+        case 4: 
+          specificTagArray = addedWhatILoveTags;
+          tagEntryID = "customWhatILoveTagEntry";
+          tagEntrySubmitID = "customWhatILoveTagEntrySubmit";
+          break;
+        default: return;
+      };
+      /*The sectionID specifies which section the tag entry is in, and thus what array the custom tag should be added to.
       1. The text from the field is gotten and stored in tagText
       2. The value of the field is cleared by being set to an empty string
       3. The tagText is pushed as a new tag to the appropriate array
-      4. The tag display for that section is added.
-      */
-      switch (sectionID) {
-        case 0: 
-          tagText = customStrengthTagEntry.value; 
-          document.getElementById("customStrengthTagEntry").value = '';
-          addedStrengthTags.push("- ".concat(tagText));
-          updateTagDisplay(0);
-          break;
-        case 1: 
-          tagText = customWorksForMeTagEntry.value; 
-          document.getElementById("customWorksForMeTagEntry").value = '';
-          addedWorksForMeTags.push("- ".concat(tagText));
-          updateTagDisplay(1);
-          break;
-        case 2: 
-          tagText = customDoesntWorkTagEntry.value; 
-          document.getElementById("customDoesntWorkTagEntry").value = '';
-          addedDoesntWorkTags.push("- ".concat(tagText));
-          updateTagDisplay(2);
-          break;
-        case 3: 
-          tagText = customWorkingOnTagEntry.value; 
-          document.getElementById("customWorkingOnTagEntry").value = '';
-          addedWorkingOnTags.push("- ".concat(tagText));
-          updateTagDisplay(3);
-          break;
-        case 4: 
-          tagText = customWhatILoveTagEntry.value;
-          document.getElementById("customWhatILoveTagEntry").value = '';
-          addedWhatILoveTags.push("- ".concat(tagText));
-          updateTagDisplay(4);
-          break;
-        default: return; break;
-      };
+      4. The tag display for that section is added.*/
+
+      const regExTagCheck = /\W/g;
+      const okTagText = regExTagCheck.exec(tagText);
+      if (okTagText != null) {
+        console.log("Aborted adding tag due to error. Details: " + sectionID + " " + specificTagArray + " " + tagEntryID + " " + tagEntrySubmitID);
+        return;
+      }
+
+      tagText = document.getElementById(tagEntryID).value;
+      document.getElementById(tagEntryID).value = '';
+      if (specificTagArray.length < 9) { 
+        specificTagArray.push("- ".concat(tagText));
+        updateTagDisplay(sectionID);
+      } else {
+        // Max tags per section is 10, submit button is disabled after adding the 10th tag
+        document.getElementById(tagEntrySubmitID).disabled = true;
+        specificTagArray.push("- ".concat(tagText));
+        updateTagDisplay(sectionID);
+      }
     };
 
     function removeTag(sectionID, tagNumber) {
 
       // Remove the tag from the appropriate array
+      // The tagnumber is passed from the button ID
       switch(sectionID) {
-        case 0: addedStrengthTags.splice(tagNumber, 1); break;
-        case 1: addedWorksForMeTags.splice(tagNumber, 1); break;
-        case 2: addedDoesntWorkTags.splice(tagNumber, 1); break;
-        case 3: addedWorkingOnTags.splice(tagNumber, 1); break;
-        case 4: addedWhatILoveTags.splice(tagNumber, 1); break;
-        default: console.log("Error Removing Tag "+ sectionID + " " + tagNumber)
+        case 0: 
+          // In each case, if the button is disabled from section having max tags, reenable it
+          if (addedStrengthTags.length == 10) document.getElementById("customStrengthTagEntrySubmit").disabled = false;
+          addedStrengthTags.splice(tagNumber, 1);
+          break;
+        case 1: 
+          if (addedWorksForMeTags.length == 10) document.getElementById("customWorksForMeTagEntrySubmit").disabled = false;
+          addedWorksForMeTags.splice(tagNumber, 1); 
+          break;
+        case 2: 
+          if (addedDoesntWorkTags.length == 10) document.getElementById("customDoesntWorkTagEntrySubmit").disabled = false;
+          addedDoesntWorkTags.splice(tagNumber, 1); 
+          break;
+        case 3: 
+          if (addedWorkingOnTags.length == 10) document.getElementById("customWorkingOnTagEntrySubmit").disabled = false;
+          addedWorkingOnTags.splice(tagNumber, 1); 
+          break;
+        case 4: 
+          if (addedWhatILoveTags.length == 10) document.getElementById("customWhatILoveTagEntrySubmit").disabled = false;
+          addedWhatILoveTags.splice(tagNumber, 1); 
+          break;
+        default: console.log("Aborted removing tag due to error. Details: "+ sectionID + " " + tagNumber)
       }
 
       // Update display after tag is deleted
@@ -856,7 +910,8 @@
       
       // Check if the file is an image.
       if (file.type && !(file.type.startsWith('image/jpeg') || file.type.startsWith('image/png'))) {
-        console.log('File is not an image.', file.type, file); // Change to ImageUploadError div
+        document.getElementById("imageUploadError").textContent = "File type not supported. Please upload another image.";
+        throw new Error("File is not an image." + file.type);
         return;
       }
 
@@ -1063,6 +1118,7 @@
       URL.revokeObjectURL(link.href);
 
     };
+
     // END PDF CUSTOMIZATION AND DOWNLOAD FEATURE
   </script>
 
