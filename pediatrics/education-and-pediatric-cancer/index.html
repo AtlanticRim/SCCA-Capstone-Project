@@ -1008,7 +1008,6 @@
       };
       index = 0; // Reset index
 
-      var index = 0;
       while (addedWorksForMeTags[index] != undefined) {
         for (var i=0; i<4; i++) { // for loop for Works For Me
           for (var j=0; j<3; j++) {
@@ -1026,7 +1025,6 @@
       };
       index = 0; // Reset index
 
-      var index = 0;
       while (addedDoesntWorkTags[index] != undefined) {
         for (var i=0; i<4; i++) { // for loop for Doesnt Work For Me
           for (var j=0; j<3; j++) {
@@ -1044,7 +1042,6 @@
       };
       index = 0; // Reset index
 
-      var index = 0;
       while (addedWorkingOnTags[index] != undefined) {
         for (var i=0; i<4; i++) { // for loop for Working On
           for (var j=0; j<3; j++) {
@@ -1062,7 +1059,6 @@
       };
       index = 0; // Reset index
 
-      var index = 0;
       while (addedWhatILoveTags[index] != undefined) {
         for (var i=0; i<4; i++) { // for loop for What I Love
           for (var j=0; j<3; j++) {
@@ -1085,10 +1081,10 @@
       if (imageAsUint8Array != undefined) var imageToEmbed = await pdfDoc.embedPng(imageAsUint8Array);
       else return;
         
-      /* Scales the image to fit in the 600x600 box
+      /* Scales the image to fit in the 700x700 box
       Note: This code is reproduced from https://github.com/Hopding/pdf-lib/blob/b8a44bd/src/api/PDFImage.ts#L96
       This is because I couldn't get the built in scaleToFit() function to work, kept getting function not defined error,
-      so I reproduced it manually (with a few tweaks to make it work).
+      so I reproduced it manually (with a few tweaks to make it work for our specific needs).
       */  
       const imgWidthScale = 700 / imageToEmbed.width;
       const imgHeightScale = 700 / imageToEmbed.height;
