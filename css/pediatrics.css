@@ -12,6 +12,7 @@ font-size: 150%;
 
 .citation {
     font-size: 75%;
+    word-wrap: break-word;
 }
 
 .resource-guide-hero-img {
