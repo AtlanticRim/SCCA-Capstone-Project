@@ -1,3 +1,4 @@
+/* CSS specific to the Pediatric Resource Guide pages */
 .pediatric-resource-guide {
   .full-width {
     width: 100%;
@@ -11,13 +12,9 @@
     font-size: 150%;
   }
 
-  /*.resource-guide-hero-img {
-    max-height: 300px;
-    position: center center;
-  }*/
-
 }
 
+/* CSS specific to the Education Toolkit pages */
 .education-toolkit {
 
   .citation {
@@ -26,7 +23,7 @@
   }
 
   .full-width {
-    width: 100%;
+    width: 80%;
   }
 
   .standard-min-height {
@@ -54,9 +51,7 @@
       font-size: 21px;
       margin-top: 26px;
       margin-bottom: 14px; }
-  
-  
-  
+
   .educator-cta {
         background: url("../img/ET_EducatorsBanner.png");
         background-size: cover;
@@ -79,7 +74,36 @@
           margin-top: 26px;
           margin-bottom: 14px; }
 
+}
 
+/*CSS for PDF Customization Lightbox on Education Toolkit page*/
+.pdf-customization-lightbox .featherlight-content{
+  background: #1f9cd0 !important;
+  width: 100%;
+  max-width: 1200px;
+
+  #pdf-customization-lightbox {
+    background: #ffffff;
+    color: #000000;
+  
+    h3 {
+    font-size: 32px;
+    }
+
+    .pdf-customization-tag {
+      display: none;
+    }
+  
+    .suggested-tag-button {
+        background: #dee2ea;
+        border: 2px solid #1f9cd0;
+        font-size: 18px;
+    }
+  
+    .pdf-customization-input {
+        background: #ffffff;
+    }
+  }
 }
 
 /*Pediatric Resource Guide nav CSS
@@ -209,9 +233,11 @@ Based off of the Cancer Plan nav CSS */
           .pediatric-resource-guide-nav .nav-container.active .col-lg.higher-ed-link a {
             border-color: #67911d; }
           .pediatric-resource-guide-nav .nav-container.active .col-lg.pediatric-advocacy-link a {
-            border-color: #b9a8ba; }}
+            border-color: #b9a8ba; }
+}
           
-
+/* Pediatric Resource Guide Navigaiton CSS
+Based off of Cancer Plan "View the Plan" CSS*/
 .resource-guide-navigation {
   background: #eef2fa;
   overflow-x: hidden; }
