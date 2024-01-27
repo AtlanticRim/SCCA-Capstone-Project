@@ -216,7 +216,7 @@
   <!-- End nav element-->
   </header>
         
-  <section class="content">
+  <section class="content education-toolkit">
     <div class="hero">
 
       
@@ -349,7 +349,8 @@
         </div>
       </div><!-- End Educator Section Nav-->
         <!-- DEBUG Link to open PDF Customization feature lightbox-->
-        <p><a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header">PDF Customization TEST</a></p>
+        <p><a href="#" data-featherlight="#pdf-customization-lightbox" data-featherlight-persist="true" data-featherlight-root="header" data-featherlight-variant="pdf-customization-lightbox">PDF Customization TEST</a></p>
+        <!--Opens a lightbox in the header with Persistent Information enabled and the pdf-customization-lightbox CSS class-->
     </div><!-- End page content-->
   </section> <!-- End section content -->
 
@@ -620,7 +621,7 @@
         </div>
       </div>
 
-      <div class="row pt-2" id="submitButtonRowDiv">
+      <div class="row py-2" id="submitButtonRowDiv">
         <div class="col-12 text-center" id="submitButtonDiv">
           <button type="submit" id="submitButton" title="Submit Information" class="large-purple-button" onclick="personalizePDF()">Submit Information</button>
         </div>
@@ -735,7 +736,7 @@
       */
       const phoneRegEx = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/g;
       const okPhone = phoneRegEx.exec(phoneNumber);
-      if (okPhone == null) {
+      if (okPhone == null && phoneNumber != "") {
         // If phone number contains unexpected characters, dispaly explanatory text and throw an error
         document.getElementById("phoneNumberError").textContent = "Please enter a valid phone number.";
         throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
@@ -747,7 +748,7 @@
       */ 
       const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
       const okEmail = emailRegEx.exec(email);
-      if (okEmail == null) {
+      if (okEmail == null && email != "") {
         // If email contains unexpected characters, dispaly explanatory text and throw an error
         document.getElementById("emailError").textContent = "Please enter a valid email.";
         throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
