@@ -90,18 +90,29 @@
     font-size: 32px;
     }
 
+    .row {
+      padding-left: 2%;
+    }
+
     .pdf-customization-tag {
+      /* The default display for tags is none
+      This will be overridden once a value is assigned to the tag via JavaScript code
+      Then, the tag will be visible.*/
       display: none;
+      background: #dee2ea;
+      border: 2px solid #1f9cd0;
     }
   
     .suggested-tag-button {
-        background: #dee2ea;
-        border: 2px solid #1f9cd0;
-        font-size: 18px;
+      background: #dee2ea;
+      border: 2px solid #1f9cd0;
+      font-size: 18px;
     }
   
     .pdf-customization-input {
-        background: #ffffff;
+      background: #dee2ea;  
+      border: 2px solid #1f9cd0;
+        
     }
   }
 }
