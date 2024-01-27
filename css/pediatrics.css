@@ -1,53 +1,85 @@
-.full-width {
+.pediatric-resource-guide {
+  .full-width {
     width: 100%;
+  }
+
+  .standard-min-height {
+    min-height: 100px;
+  }
+
+  .pediatric-resource-guide-heading {
+    font-size: 150%;
+  }
+
+  /*.resource-guide-hero-img {
+    max-height: 300px;
+    position: center center;
+  }*/
+
 }
 
-.standard-min-height {
-  min-height: 100px;
-}
+.education-toolkit {
 
-.pediatric-resource-guide-heading {
-font-size: 150%;
-}
-
-.citation {
+  .citation {
     font-size: 75%;
     word-wrap: break-word;
-}
-
-.resource-guide-hero-img {
-  max-height: 300px;
-  position: center center;
-}
-
-.featherlight .featherlight-content {
-  /*Override of style in main.css specifically for the PDF Customization div*/
-  width: 100%;
-  max-width: 1200px;
-}
-
-#pdf-customization-lightbox {
-  /*background: #ffffff;*/
-
-  h3 {
-  font-size: 32px;
   }
-}
 
-.pdf-customization-tag {
-    display: none;
-}
+  .full-width {
+    width: 100%;
+  }
 
-.suggested-tag-button {
-    background: #ffffff;
-    /*color: #1f9cd0; Could be added back depending on the text color we want.*/
-    border: 2px solid #1f9cd0;
-    border-radius: 20%;
-    font-size: 18px;
-}
+  .standard-min-height {
+    min-height: 100px;
+  }
 
-.pdf-customization-input {
-    background: #ffffff;
+  .parent-cta {
+    background: url("../img/ET_ParentsBanner.png");
+    background-size: cover;
+    background-position: right;
+    margin-top: 0px; }
+    .parent-cta ul {
+      margin-top: 34px; }
+      .parent-cta ul .icon-list:before {
+        color: #b1e1f5; }
+  
+  .cancer-plan.parent-cta .box-graphic {
+    padding: 30px 19px;
+    font-size: 3.5em;
+    max-width: none;
+    height: auto;
+    color: #b1e1f5;
+    border: 2px solid #b1e1f5; }
+    .cancer-plan.parent-cta .box-graphic .small-text {
+      font-size: 21px;
+      margin-top: 26px;
+      margin-bottom: 14px; }
+  
+  
+  
+  .educator-cta {
+        background: url("../img/ET_EducatorsBanner.png");
+        background-size: cover;
+        background-position: right;
+        margin-top: 0px; }
+    .educator-cta ul {
+          margin-top: 34px; }
+      .educator-cta ul .icon-list:before {
+            color: #b1e1f5; }
+      
+  .cancer-plan.educator-cta .box-graphic {
+        padding: 30px 19px;
+        font-size: 3.5em;
+        max-width: none;
+        height: auto;
+        color: #b1e1f5;
+        border: 2px solid #b1e1f5; }
+    .cancer-plan.educator-cta .box-graphic .small-text {
+          font-size: 21px;
+          margin-top: 26px;
+          margin-bottom: 14px; }
+
+
 }
 
 /*Pediatric Resource Guide nav CSS
@@ -265,50 +297,3 @@ Based off of the Cancer Plan nav CSS */
 .pediatric-advocacy-bg {
   background: #b9a8ba;
 }
-
-.parent-cta {
-  background: url("../img/ET_ParentsBanner.png");
-  background-size: cover;
-  background-position: right;
-  margin-top: 0px; }
-  .parent-cta ul {
-    margin-top: 34px; }
-    .parent-cta ul .icon-list:before {
-      color: #b1e1f5; }
-
-.cancer-plan.parent-cta .box-graphic {
-  padding: 30px 19px;
-  font-size: 3.5em;
-  max-width: none;
-  height: auto;
-  color: #b1e1f5;
-  border: 2px solid #b1e1f5; }
-  .cancer-plan.parent-cta .box-graphic .small-text {
-    font-size: 21px;
-    margin-top: 26px;
-    margin-bottom: 14px; }
-
-
-
-.educator-cta {
-      background: url("../img/ET_EducatorsBanner.png");
-      background-size: cover;
-      background-position: right;
-      margin-top: 0px; }
-  .educator-cta ul {
-        margin-top: 34px; }
-    .educator-cta ul .icon-list:before {
-          color: #b1e1f5; }
-    
-.cancer-plan.educator-cta .box-graphic {
-      padding: 30px 19px;
-      font-size: 3.5em;
-      max-width: none;
-      height: auto;
-      color: #b1e1f5;
-      border: 2px solid #b1e1f5; }
-  .cancer-plan.educator-cta .box-graphic .small-text {
-        font-size: 21px;
-        margin-top: 26px;
-        margin-bottom: 14px; }
-
