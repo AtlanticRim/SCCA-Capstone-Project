@@ -639,7 +639,7 @@
       PDF Customization
       Authors: J. Alan Wallace and Ronisha Genwright
       Version: 1.0
-      Date Last Updated: Oct 7, 2023
+      Date Last Updated: Jan 23, 2024
     --------------------------------------------*/
 
     // Constants needed for PDF-LIB to work. 
@@ -735,7 +735,7 @@
       */
       const phoneRegEx = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/g;
       const okPhone = phoneRegEx.exec(phoneNumber);
-      if (okPhone != null) {
+      if (okPhone == null) {
         // If phone number contains unexpected characters, dispaly explanatory text and throw an error
         document.getElementById("phoneNumberError").textContent = "Please enter a valid phone number.";
         throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
@@ -747,7 +747,7 @@
       */ 
       const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
       const okEmail = emailRegEx.exec(email);
-      if (okEmail != null) {
+      if (okEmail == null) {
         // If email contains unexpected characters, dispaly explanatory text and throw an error
         document.getElementById("emailError").textContent = "Please enter a valid email.";
         throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
