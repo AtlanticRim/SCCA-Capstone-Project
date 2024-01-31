@@ -421,203 +421,223 @@
     <div id="pdf-customization-lightbox" class="lightbox">
       <div class="row">
         <div class="col-12" id="informationEntry">
-          <h2 class="py-2">1. Enter Basic Information</h2>
+          <h3 class="py-2">1. Enter Basic Information</h3>
           
-          <div class="row">
-          <div class="col-lg-6">
-            <label for="childFirstName" class="pt-2">Child's First Name</label><br>
-            <input type="text" id="childFirstName" name="childFirstName"><br>
+          <div class="row pb-md-3">
+            <div class="col-lg-6 pl-md-4">
+              <label for="childFirstName" class="pt-2">Child's First Name</label><br>
+              <input type="text" id="childFirstName" name="childFirstName"><br>
 
-            <label for="childLastName" class="pt-2">Child's Last Name</label><br>
-            <input type="text" id="childLastName" name="childLastName"><br>
-            <p id="childNameError"></p>
+              <label for="childLastName" class="pt-2">Child's Last Name</label><br>
+              <input type="text" id="childLastName" name="childLastName"><br>
+              <p id="childNameError"></p>
+            </div>
+
+            <div class="col-lg-6">
+              <label for="parentFirstName" class="pt-2">Parent/Guardian's First Name</label><br>
+              <input type="text" id="parentFirstName" name="parentFirstName"><br>
+
+              <label for="parentLastName" class="pt-2">Parent/Guardian's Last Name</label><br>
+              <input type="text" id="parentLastName" name="parentLastName"><br>
+              <p id="parentNameError"></p>
+            </div>
           </div>
 
-          <div class="col-lg-6">
-            <label for="parentFirstName" class="pt-2">Parent/Guardian's First Name</label><br>
-            <input type="text" id="parentFirstName" name="parentFirstName"><br>
+          <h3 class="py-2">2. Enter Your Contact Information (optional)</h3>
+          <div class="row py-md-2">
+            <div class="col-lg-12 pl-md-4">
+              
+              <label for="phoneNumber">Phone Number</label><br>
+              <input type="text" id="phoneNumber" name="phoneNumber"><br>
+              <p id="phoneNumberError"></p>
 
-            <label for="parentLastName" class="pt-2">Parent/Guardian's Last Name</label><br>
-            <input type="text" id="parentLastName" name="parentLastName"><br>
-            <p id="parentNameError"></p>
+
+              <label for="email">Email Address</label><br>
+              <input type="text" id="email" name="email"><br>
+              <p id="emailError"></p>
+            </div>
           </div>
+
+          <h3 class="py-2">3. Upload an Image (optional)</h3>
+          <div class="row py-md-2">
+            <div class="col-lg-12 pl-md-4">
+              <p>Recommended: Picture of the head and shoulders, at least 700x700 pixels.</p>
+              <label for="imageUpload" class="py-1">Upload Image</label><br>
+              <input type="file" id="imageUpload" title="Select an image to upload" accept=".png, .jpg, .jpeg" />
+              <p id="imageUploadError"></p>
+            </div>
           </div>
-
-          <h2 class="py-2">2. Enter Your Contact Information (optional)</h2>
-          <label for="phoneNumber">Phone Number</label><br>
-          <input type="text" id="phoneNumber" name="phoneNumber"><br>
-          <p id="phoneNumberError"></p>
-
-          <label for="email">Email Address</label><br>
-          <input type="text" id="email" name="email"><br>
-          <p id="emailError"></p>
-
-          <h2 class="py-2">3. Upload an Image (optional)</h2>
-          <p>Recommended: Picture of the head and shoulders, at least 700x700 pixels.</p>
-          <label for="imageUpload">Upload Image</label><br>
-          <input type="file" id="imageUpload" title="imageUpload" accept=".png, .jpg, .jpeg" />
-          <p id="imageUploadError"></p>
         </div><!--End informationEntry-->
       </div><!--End row-->
 
       <!--Tag Selection-->
-      <div class="row py-1" id="strengthsTagSelection">
-        <div class="col-12" id="strengthTags">
-          <h2>4. Highlight Some of Your Child's Strengths</h2>
-          <p>Select up to 10 tags that show off some of your child's best talents. You can use the recommended tags or enter your own.</p>
-          <p>Your selected tags will appear here:</p>
-          <!--10 Strength Tags-->
-          <button type="button" class="pdf-customization-tag" id="tagButton00" title="Remove Tag"  onclick="removeTag(0, 0)">Button 0</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton01" title="Remove Tag"  onclick="removeTag(0, 1)">Button 1</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton02" title="Remove Tag"  onclick="removeTag(0, 2)">Button 2</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton03" title="Remove Tag"  onclick="removeTag(0, 3)">Button 3</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton04" title="Remove Tag"  onclick="removeTag(0, 4)">Button 4</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton05" title="Remove Tag"  onclick="removeTag(0, 5)">Button 5</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton06" title="Remove Tag"  onclick="removeTag(0, 6)">Button 6</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton07" title="Remove Tag"  onclick="removeTag(0, 7)">Button 7</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton08" title="Remove Tag"  onclick="removeTag(0, 8)">Button 8</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton09" title="Remove Tag"  onclick="removeTag(0, 9)">Button 9</button>
-        </div>
-        <div class="col-12 pt-2" id="strengthsSuggestedTags">
-          <p>Suggested Tags:</p>
-          <button type="button" id="suggestedTag00" class="suggested-tag-button" title="Add Strengths0" onclick="addSuggestedTag(0, 0, 'Trouble Focusing')">+ Strengths0</button>
-          <button type="button" id="suggestedTag01" class="suggested-tag-button" title="Add Strengths1" onclick="addSuggestedTag(0, 1, 'Motor Skills')">+ Strengths1</button>
-          <button type="button" id="suggestedTag02" class="suggested-tag-button" title="Add Strengths2" onclick="addSuggestedTag(0, 2, 'Daily Medicine')">+ Strengths2</button>
-          <button type="button" id="suggestedTag03" class="suggested-tag-button" title="Add Strengths3" onclick="addSuggestedTag(0, 3, 'Alphabet')">+ Strengths3</button>
-          <button type="button" id="suggestedTag04" class="suggested-tag-button" title="Add Strengths4" onclick="addSuggestedTag(0, 4, 'Hearing Trouble')">+ Strengths4</button>
-        </div>
-        <div class="col-12 py-2" id="customStrengthTagEntryDiv">
-          <label for="customStrengthTagEntry">Enter a Custom Strength</label>
-          <input type="text" id="customStrengthTagEntry" title="Custom Strength Tag Entry" maxlength="20">
-          <button type="submit" id="customStrengthTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(0)">Add Custom Tag</button>
-        </div>
-      </div>
-
-      <div class="row py-3 py-1" id="worksForMeTagSelection">
-        <div class="col-12" id="worksForMeTags">
-          <h2>5. Highlight What Works for Your Child</h2>
-          <p>Select up to 10 tags that describe teaching strategies that help your child learn. You can use the recommended tags or enter your own.</p>
-          <p>Your selected tags will appear here:</p>
-          <!--10 worksForMe Tags-->
-          <button type="button" class="pdf-customization-tag" id="tagButton10" title="Remove Tag"  onclick="removeTag(1, 0)">Button 10</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton11" title="Remove Tag"  onclick="removeTag(1, 1)">Button 11</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton12" title="Remove Tag"  onclick="removeTag(1, 2)">Button 12</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton13" title="Remove Tag"  onclick="removeTag(1, 3)">Button 13</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton14" title="Remove Tag"  onclick="removeTag(1, 4)">Button 14</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton15" title="Remove Tag"  onclick="removeTag(1, 5)">Button 15</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton16" title="Remove Tag"  onclick="removeTag(1, 6)">Button 16</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton17" title="Remove Tag"  onclick="removeTag(1, 7)">Button 17</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton18" title="Remove Tag"  onclick="removeTag(1, 8)">Button 18</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton19" title="Remove Tag"  onclick="removeTag(1, 9)">Button 19</button>
-        </div>
-        <div class="col-12 pt-2" id="worksForMeSuggestedTags">
-          <p>Suggested Tags:</p>
-          <button type="button" id="suggestedTag10" class="suggested-tag-button" title="Add Strengths5" onclick="addSuggestedTag(1, 0, 'Trouble Focusing')">+ Strengths5</button>
-          <button type="button" id="suggestedTag11" class="suggested-tag-button" title="Add Strengths6" onclick="addSuggestedTag(1, 1, 'Motor Skills')">+ Strengths6</button>
-          <button type="button" id="suggestedTag12" class="suggested-tag-button" title="Add Strengths7" onclick="addSuggestedTag(1, 2, 'Daily Medicine')">+ Strengths7</button>
-          <button type="button" id="suggestedTag13" class="suggested-tag-button" title="Add Strengths8" onclick="addSuggestedTag(1, 3, 'Alphabet')">+ Strengths8</button>
-          <button type="button" id="suggestedTag14" class="suggested-tag-button" title="Add Strengths9" onclick="addSuggestedTag(1, 4, 'Hearing Trouble')">+ Strengths9</button>
-        </div>
-        <div class="col-12 py-2" id="customWorksForMeTagEntryDiv">
-          <label for="customWorksForMeTagEntry">Enter a Custom Works For Me</label>
-          <input type="text" id="customWorksForMeTagEntry" title="Custom Works For Me Tag Entry" maxlength="20">
-          <button type="submit" id="customWorksForMeTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(1)">Add Custom Tag</button>
+      <div class="row py-md-4" id="strengthsTagSelection">
+        <div class="row-md pl-md-4">
+          <div class="col-12" id="strengthTags">
+            <h3 class="py-2">4. Highlight Some of Your Child's Strengths</h3>
+            <p>Select up to 10 tags that show off some of your child's best talents. You can use the recommended tags or enter your own.</p>
+            <p>Your selected tags will appear here:</p>
+            <!--10 Strength Tags-->
+            <button type="button" class="pdf-customization-tag" id="tagButton00" title="Remove Tag"  onclick="removeTag(0, 0)">Button 0</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton01" title="Remove Tag"  onclick="removeTag(0, 1)">Button 1</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton02" title="Remove Tag"  onclick="removeTag(0, 2)">Button 2</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton03" title="Remove Tag"  onclick="removeTag(0, 3)">Button 3</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton04" title="Remove Tag"  onclick="removeTag(0, 4)">Button 4</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton05" title="Remove Tag"  onclick="removeTag(0, 5)">Button 5</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton06" title="Remove Tag"  onclick="removeTag(0, 6)">Button 6</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton07" title="Remove Tag"  onclick="removeTag(0, 7)">Button 7</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton08" title="Remove Tag"  onclick="removeTag(0, 8)">Button 8</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton09" title="Remove Tag"  onclick="removeTag(0, 9)">Button 9</button>
+          </div>
+          <div class="col-12 pt-2" id="strengthsSuggestedTags">
+            <p>Suggested Tags:</p>
+            <button type="button" id="suggestedTag00" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(0, 0, 'Likes to tell jokes')">+ Likes to tell jokes</button>
+            <button type="button" id="suggestedTag01" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(0, 1, 'Can count to 10')">+ Can count to 10</button>
+            <button type="button" id="suggestedTag02" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(0, 2, 'Pattern recognition')">+ Pattern recognition</button>
+            <button type="button" id="suggestedTag03" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(0, 3, 'Math skills')">+ Math skills</button>
+            <button type="button" id="suggestedTag04" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(0, 4, 'Reading skills')">+ Reading skills</button>
+          </div>
+          <div class="col-12 py-2" id="customStrengthTagEntryDiv">
+            <label for="customStrengthTagEntry">Enter a Custom Tag</label>
+            <input type="text" id="customStrengthTagEntry" title="Custom Strength Tag Entry" maxlength="20">
+            <button type="submit" id="customStrengthTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(0)">Add Custom Tag</button>
+          </div>
         </div>
       </div>
 
-      <div class="row py-3 py-1" id="doesntWorkTagSelection">
-        <div class="col-12" id="doesntWorkTags">
-          <h2>6. Highlight What Doesn't Work for Your Child</h2>
-          <p>Select up to 10 tags that describe things your child struggles with, or teaching strategies that should be avoided. You can use the recommended tags or enter your own.</p>
-          <p>Your selected tags will appear here:</p>
-          <!--10 doesntWork Tags-->
-          <button type="button" class="pdf-customization-tag" id="tagButton20" title="Remove Tag"  onclick="removeTag(2, 0)">Button 10</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton21" title="Remove Tag"  onclick="removeTag(2, 1)">Button 11</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton22" title="Remove Tag"  onclick="removeTag(2, 2)">Button 12</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton23" title="Remove Tag"  onclick="removeTag(2, 3)">Button 13</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton24" title="Remove Tag"  onclick="removeTag(2, 4)">Button 14</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton25" title="Remove Tag"  onclick="removeTag(2, 5)">Button 15</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton26" title="Remove Tag"  onclick="removeTag(2, 6)">Button 16</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton27" title="Remove Tag"  onclick="removeTag(2, 7)">Button 17</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton28" title="Remove Tag"  onclick="removeTag(2, 8)">Button 18</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton29" title="Remove Tag"  onclick="removeTag(2, 9)">Button 19</button>
-        </div>
-        <div class="col-12 pt-2" id="doesntWorkSuggestedTags">
-          <p>Suggested Tags:</p>
-          <button type="button" id="suggestedTag20" class="suggested-tag-button" title="Add Strengths10" onclick="addSuggestedTag(2, 0, 'Trouble Focusing')">+ Strengths10</button>
-          <button type="button" id="suggestedTag21" class="suggested-tag-button" title="Add Strengths11" onclick="addSuggestedTag(2, 1, 'Motor Skills')">+ Strengths11</button>
-          <button type="button" id="suggestedTag22" class="suggested-tag-button" title="Add Strengths12" onclick="addSuggestedTag(2, 2, 'Daily Medicine')">+ Strengths12</button>
-          <button type="button" id="suggestedTag23" class="suggested-tag-button" title="Add Strengths13" onclick="addSuggestedTag(2, 3, 'Alphabet')">+ Strengths13</button>
-          <button type="button" id="suggestedTag24" class="suggested-tag-button" title="Add Strengths14" onclick="addSuggestedTag(2, 4, 'Hearing Trouble')">+ Strengths14</button>
-        </div>
-        <div class="col-12 py-2" id="customDoesntWorkTagEntryDiv">
-          <label for="customDoesntWorkTagEntry">Enter a Custom Doesn't Work For Me</label>
-          <input type="text" id="customDoesntWorkTagEntry" title="Custom Doesn't Work For Me Tag Entry" maxlength="20"> 
-          <button type="submit" id="customDoesntWorkTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(2)">Add Custom Tag</button>
-        </div>
-      </div>
-
-      <div class="row py-3 py-1" id="workingOnTagSelection">
-        <div class="col-12" id="workingOnTags">
-          <h2>7. Highlight What Your Child Is Working On</h2>
-          <p>Select up to 10 tags that describe skills your child is still working on. You can use the recommended tags or enter your own.</p>
-          <p>Your selected tags will appear here:</p>
-          <!--10 workingOn Tags-->
-          <button type="button" class="pdf-customization-tag" id="tagButton30" title="Remove Tag"  onclick="removeTag(3, 0)">Button 10</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton31" title="Remove Tag"  onclick="removeTag(3, 1)">Button 11</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton32" title="Remove Tag"  onclick="removeTag(3, 2)">Button 12</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton33" title="Remove Tag"  onclick="removeTag(3, 3)">Button 13</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton34" title="Remove Tag"  onclick="removeTag(3, 4)">Button 14</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton35" title="Remove Tag"  onclick="removeTag(3, 5)">Button 15</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton36" title="Remove Tag"  onclick="removeTag(3, 6)">Button 16</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton37" title="Remove Tag"  onclick="removeTag(3, 7)">Button 17</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton38" title="Remove Tag"  onclick="removeTag(3, 8)">Button 18</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton39" title="Remove Tag"  onclick="removeTag(3, 9)">Button 19</button>
-        </div>
-        <div class="col-12 pt-2" id="workingOnSuggestedTags">
-          <p>Suggested Tags:</p>
-          <button type="button" id="suggestedTag30" class="suggested-tag-button" title="Add Strengths15" onclick="addSuggestedTag(3, 0, 'Trouble Focusing')">+ Strengths15</button>
-          <button type="button" id="suggestedTag31" class="suggested-tag-button" title="Add Strengths16" onclick="addSuggestedTag(3, 1, 'Motor Skills')">+ Strengths16</button>
-          <button type="button" id="suggestedTag32" class="suggested-tag-button" title="Add Strengths17" onclick="addSuggestedTag(3, 2, 'Daily Medicine')">+ Strengths17</button>
-          <button type="button" id="suggestedTag33" class="suggested-tag-button" title="Add Strengths18" onclick="addSuggestedTag(3, 3, 'Alphabet')">+ Strengths18</button>
-          <button type="button" id="suggestedTag34" class="suggested-tag-button" title="Add Strengths19" onclick="addSuggestedTag(3, 4, 'Hearing Trouble')">+ Strengths19</button>
-        </div>
-        <div class="col-12 py-2" id="customWorkingOnTagEntryDiv">
-          <label for="customWorkingOnTagEntry">Enter a Custom Working On</label>
-          <input type="text" id="customWorkingOnTagEntry" title="Custom Working On Tag Entry" maxlength="20">
-          <button type="submit" id="customWorkingOnTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(3)">Add Custom Tag</button>
+      <div class="row py-md-4" id="worksForMeTagSelection">
+        <div class="row-md pl-md-4">
+          <div class="col-12" id="worksForMeTags">
+            <h3 class="py-2">5. Highlight What Works for Your Child</h3>
+            <p>Select up to 10 tags that describe teaching strategies that help your child learn. You can use the recommended tags or enter your own.</p>
+            <p>Your selected tags will appear here:</p>
+            <!--10 worksForMe Tags-->
+            <button type="button" class="pdf-customization-tag" id="tagButton10" title="Remove Tag"  onclick="removeTag(1, 0)">Button 10</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton11" title="Remove Tag"  onclick="removeTag(1, 1)">Button 11</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton12" title="Remove Tag"  onclick="removeTag(1, 2)">Button 12</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton13" title="Remove Tag"  onclick="removeTag(1, 3)">Button 13</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton14" title="Remove Tag"  onclick="removeTag(1, 4)">Button 14</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton15" title="Remove Tag"  onclick="removeTag(1, 5)">Button 15</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton16" title="Remove Tag"  onclick="removeTag(1, 6)">Button 16</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton17" title="Remove Tag"  onclick="removeTag(1, 7)">Button 17</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton18" title="Remove Tag"  onclick="removeTag(1, 8)">Button 18</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton19" title="Remove Tag"  onclick="removeTag(1, 9)">Button 19</button>
+          </div>
+          <div class="col-12 pt-2" id="worksForMeSuggestedTags">
+            <p>Suggested Tags:</p>
+            <button type="button" id="suggestedTag10" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(1, 0, 'Frequent breaks')">+ Frequent breaks</button>
+            <button type="button" id="suggestedTag11" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(1, 1, 'Lesson summaries')">+ Lesson summaries</button>
+            <button type="button" id="suggestedTag12" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(1, 2, 'Patience')">+ Patience</button>
+            <button type="button" id="suggestedTag13" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(1, 3, 'Reading with a buddy')">+ Reading with a buddy</button>
+            <button type="button" id="suggestedTag14" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(1, 4, 'Extra time to work')">+ Extra time to work</button>
+          </div>
+          <div class="col-12 py-2" id="customWorksForMeTagEntryDiv">
+            <label for="customWorksForMeTagEntry">Enter a Custom Tag</label>
+            <input type="text" id="customWorksForMeTagEntry" title="Custom Works For Me Tag Entry" maxlength="20">
+            <button type="submit" id="customWorksForMeTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(1)">Add Custom Tag</button>
+          </div>
         </div>
       </div>
 
-      <div class="row py-1" id="whatILoveTagSelection">
-        <div class="col-12" id="whatILoveTags">
-          <h2>8. Highlight Some Things Your Child Loves</h2>
-          <p>Select up to 10 tags that describe things your child loves. These can be objects, people, or ideas! You can use the recommended tags or enter your own.</p>
-          <p>Your selected tags will appear here:</p>
-          <!--10 whatILove Tags-->
-          <button type="button" class="pdf-customization-tag" id="tagButton40" title="Remove Tag"  onclick="removeTag(4, 0)">Button 10</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton41" title="Remove Tag"  onclick="removeTag(4, 1)">Button 11</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton42" title="Remove Tag"  onclick="removeTag(4, 2)">Button 12</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton43" title="Remove Tag"  onclick="removeTag(4, 3)">Button 13</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton44" title="Remove Tag"  onclick="removeTag(4, 4)">Button 14</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton45" title="Remove Tag"  onclick="removeTag(4, 5)">Button 15</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton46" title="Remove Tag"  onclick="removeTag(4, 6)">Button 16</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton47" title="Remove Tag"  onclick="removeTag(4, 7)">Button 17</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton48" title="Remove Tag"  onclick="removeTag(4, 8)">Button 18</button>
-          <button type="button" class="pdf-customization-tag" id="tagButton49" title="Remove Tag"  onclick="removeTag(4, 9)">Button 19</button>
+      <div class="row py-md-4" id="doesntWorkTagSelection">
+        <div class="row-md pl-md-4">
+          <div class="col-12" id="doesntWorkTags">
+            <h3 class="py-2">6. Highlight What Doesn't Work for Your Child</h3>
+            <p>Select up to 10 tags that describe things your child struggles with, or teaching strategies that should be avoided. You can use the recommended tags or enter your own.</p>
+            <p>Your selected tags will appear here:</p>
+            <!--10 doesntWork Tags-->
+            <button type="button" class="pdf-customization-tag" id="tagButton20" title="Remove Tag"  onclick="removeTag(2, 0)">Button 10</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton21" title="Remove Tag"  onclick="removeTag(2, 1)">Button 11</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton22" title="Remove Tag"  onclick="removeTag(2, 2)">Button 12</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton23" title="Remove Tag"  onclick="removeTag(2, 3)">Button 13</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton24" title="Remove Tag"  onclick="removeTag(2, 4)">Button 14</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton25" title="Remove Tag"  onclick="removeTag(2, 5)">Button 15</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton26" title="Remove Tag"  onclick="removeTag(2, 6)">Button 16</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton27" title="Remove Tag"  onclick="removeTag(2, 7)">Button 17</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton28" title="Remove Tag"  onclick="removeTag(2, 8)">Button 18</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton29" title="Remove Tag"  onclick="removeTag(2, 9)">Button 19</button>
+          </div>
+          <div class="col-12 pt-2" id="doesntWorkSuggestedTags">
+            <p>Suggested Tags:</p>
+            <button type="button" id="suggestedTag20" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(2, 0, 'Noisy rooms')">+ Noisy rooms</button>
+            <button type="button" id="suggestedTag21" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(2, 1, 'Long reading times')">+ Long reading times</button>
+            <button type="button" id="suggestedTag22" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(2, 2, 'High-stress testing')">+ High-stress testing</button>
+            <button type="button" id="suggestedTag23" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(2, 3, 'Talking to strangers')">+ Talking to strangers</button>
+            <button type="button" id="suggestedTag24" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(2, 4, 'Complex instructions')">+ Complex instructions</button>
+          </div>
+          <div class="col-12 py-2" id="customDoesntWorkTagEntryDiv">
+            <label for="customDoesntWorkTagEntry">Enter a Custom Tag</label>
+            <input type="text" id="customDoesntWorkTagEntry" title="Custom Doesn't Work For Me Tag Entry" maxlength="20"> 
+            <button type="submit" id="customDoesntWorkTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(2)">Add Custom Tag</button>
+          </div>
         </div>
-        <div class="col-12 pt-2" id="whatILoveSuggestedTags">
-          <p>Suggested Tags:</p>
-          <button type="button" id="suggestedTag40" class="suggested-tag-button" title="Add Strengths20" onclick="addSuggestedTag(4, 0, 'Trouble Focusing')">+ Strengths20</button>
-          <button type="button" id="suggestedTag41" class="suggested-tag-button" title="Add Strengths21" onclick="addSuggestedTag(4, 1, 'Motor Skills')">+ Strengths21</button>
-          <button type="button" id="suggestedTag42" class="suggested-tag-button" title="Add Strengths22" onclick="addSuggestedTag(4, 2, 'Daily Medicine')">+ Strengths22</button>
-          <button type="button" id="suggestedTag43" class="suggested-tag-button" title="Add Strengths23" onclick="addSuggestedTag(4, 3, 'Alphabet')">+ Strengths23</button>
-          <button type="button" id="suggestedTag44" class="suggested-tag-button" title="Add Strengths24" onclick="addSuggestedTag(4, 4, 'Hearing Trouble')">+ Strengths24</button>
+      </div>
+
+      <div class="row py-md-4" id="workingOnTagSelection">
+        <div class="row-md pl-md-4">
+          <div class="col-12" id="workingOnTags">
+            <h3 class="py-2">7. Highlight What Your Child Is Working On</h3>
+            <p>Select up to 10 tags that describe skills your child is still working on. You can use the recommended tags or enter your own.</p>
+            <p>Your selected tags will appear here:</p>
+            <!--10 workingOn Tags-->
+            <button type="button" class="pdf-customization-tag" id="tagButton30" title="Remove Tag"  onclick="removeTag(3, 0)">Button 10</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton31" title="Remove Tag"  onclick="removeTag(3, 1)">Button 11</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton32" title="Remove Tag"  onclick="removeTag(3, 2)">Button 12</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton33" title="Remove Tag"  onclick="removeTag(3, 3)">Button 13</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton34" title="Remove Tag"  onclick="removeTag(3, 4)">Button 14</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton35" title="Remove Tag"  onclick="removeTag(3, 5)">Button 15</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton36" title="Remove Tag"  onclick="removeTag(3, 6)">Button 16</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton37" title="Remove Tag"  onclick="removeTag(3, 7)">Button 17</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton38" title="Remove Tag"  onclick="removeTag(3, 8)">Button 18</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton39" title="Remove Tag"  onclick="removeTag(3, 9)">Button 19</button>
+          </div>
+          <div class="col-12 pt-2" id="workingOnSuggestedTags">
+            <p>Suggested Tags:</p>
+            <button type="button" id="suggestedTag30" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(3, 0, 'Handwriting')">+ Handwriting</button>
+            <button type="button" id="suggestedTag31" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(3, 1, 'Social skills')">+ Social skills</button>
+            <button type="button" id="suggestedTag32" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(3, 2, 'Talking to strangers')">+ Talking to strangers</button>
+            <button type="button" id="suggestedTag33" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(3, 3, 'Reading long books')">+ Reading long books</button>
+            <button type="button" id="suggestedTag34" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(3, 4, 'Multi-step math')">+ Multi-step math</button>
+          </div>
+          <div class="col-12 py-2" id="customWorkingOnTagEntryDiv">
+            <label for="customWorkingOnTagEntry">Enter a Custom Tag</label>
+            <input type="text" id="customWorkingOnTagEntry" title="Custom Working On Tag Entry" maxlength="20">
+            <button type="submit" id="customWorkingOnTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(3)">Add Custom Tag</button>
+          </div>
         </div>
-        <div class="col-12 py-2" id="customWhatILoveTagEntryDiv">
-          <label for="customWhatILoveTagEntry">Enter a Custom What I Love</label>
-          <input type="text" id="customWhatILoveTagEntry" title="Custom What I Love Tag Entry" maxlength="20">
-          <button type="submit" id="customWhatILoveTagEntrySubmit" onclick="addCustomTag(4)">Add Custom Tag</button>
+      </div>
+
+      <div class="row py-md-4" id="whatILoveTagSelection">
+        <div class="row-md pl-md-4">
+          <div class="col-12" id="whatILoveTags">
+            <h3 class="py-2">8. Highlight Some Things Your Child Loves</h3>
+            <p>Select up to 10 tags that describe things your child loves. These can be objects, people, or ideas! You can use the recommended tags or enter your own.</p>
+            <p>Your selected tags will appear here:</p>
+            <!--10 whatILove Tags-->
+            <button type="button" class="pdf-customization-tag" id="tagButton40" title="Remove Tag"  onclick="removeTag(4, 0)">Button 10</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton41" title="Remove Tag"  onclick="removeTag(4, 1)">Button 11</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton42" title="Remove Tag"  onclick="removeTag(4, 2)">Button 12</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton43" title="Remove Tag"  onclick="removeTag(4, 3)">Button 13</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton44" title="Remove Tag"  onclick="removeTag(4, 4)">Button 14</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton45" title="Remove Tag"  onclick="removeTag(4, 5)">Button 15</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton46" title="Remove Tag"  onclick="removeTag(4, 6)">Button 16</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton47" title="Remove Tag"  onclick="removeTag(4, 7)">Button 17</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton48" title="Remove Tag"  onclick="removeTag(4, 8)">Button 18</button>
+            <button type="button" class="pdf-customization-tag" id="tagButton49" title="Remove Tag"  onclick="removeTag(4, 9)">Button 19</button>
+          </div>
+          <div class="col-12 pt-2" id="whatILoveSuggestedTags">
+            <p>Suggested Tags:</p>
+            <button type="button" id="suggestedTag40" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(4, 0, 'Drawing')">+ Drawing</button>
+            <button type="button" id="suggestedTag41" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(4, 1, 'Animals')">+ Animals</button>
+            <button type="button" id="suggestedTag42" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(4, 2, 'Arts and crafts')">+ Arts and crafts</button>
+            <button type="button" id="suggestedTag43" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(4, 3, 'Science experiments')">+ Science experiments</button>
+            <button type="button" id="suggestedTag44" class="suggested-tag-button" title="Add Suggested Tag" onclick="addSuggestedTag(4, 4, 'Writing stories')">+ Writing stories</button>
+          </div>
+          <div class="col-12 py-2" id="customWhatILoveTagEntryDiv">
+            <label for="customWhatILoveTagEntry">Enter a Custom Tag</label>
+            <input type="text" id="customWhatILoveTagEntry" title="Custom What I Love Tag Entry" maxlength="20">
+            <button type="submit" id="customWhatILoveTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(4)">Add Custom Tag</button>
+          </div>
         </div>
       </div>
 

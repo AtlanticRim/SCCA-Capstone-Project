@@ -99,20 +99,31 @@
       This will be overridden once a value is assigned to the tag via JavaScript code
       Then, the tag will be visible.*/
       display: none;
+
+      /*This CSS is similar to the suggested-tag-button CSS */
       background: #dee2ea;
       border: 2px solid #1f9cd0;
+      margin-left: 1%;
+      margin-bottom: 1%;
     }
   
     .suggested-tag-button {
       background: #dee2ea;
       border: 2px solid #1f9cd0;
       font-size: 18px;
+      margin-left: 1%;
+      margin-bottom: 1%;
+      }
+
+    input {
+      font-size: 18px;
+      margin: 2px;
     }
   
     .pdf-customization-input {
-      background: #dee2ea;  
-      border: 2px solid #1f9cd0;
-        
+      background: #dee2ea;
+      font-size: 18px;
+      margin-top: 2%;
     }
   }
 }
