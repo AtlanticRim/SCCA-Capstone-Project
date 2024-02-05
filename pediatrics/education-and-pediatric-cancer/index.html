@@ -659,6 +659,7 @@
     /*------------------------------------------
       PDF Customization
       Authors: J. Alan Wallace and Ronisha Genwright
+      Contact Info: alanwallaceii2@gmail.com, github.com/AtlanticRim
       Version: 1.0
       Date Last Updated: Feb 1, 2024
     --------------------------------------------*/
@@ -674,19 +675,14 @@
 
     // Tag Elements - Strengths
     const addedStrengthTags = new Array();
-    //const customStrengthTagEntry = document.getElementById("customStrengthTagEntry");
     // Tag Elements - WorksForMe
     const addedWorksForMeTags = new Array();
-    //const customWorksForMeTagEntry = document.getElementById("customWorksForMeTagEntry");
     // Tag Elements - doesntWork
     const addedDoesntWorkTags = new Array();
-    //const customDoesntWorkTagEntry = document.getElementById("customDoesntWorkTagEntry");
     // Tag Elements - workingOn
     const addedWorkingOnTags = new Array();
-    //const customWorkingOnTagEntry = document.getElementById("customWorkingOnTagEntry");
     // Tag Elements - whatILove
     const addedWhatILoveTags = new Array();
-    //const customWhatILoveTagEntry = document.getElementById("customWhatILoveTagEntry");
 
     // Variables and basic update function for image upload
     var imageAsUint8Array;
@@ -697,7 +693,7 @@
     });
 
     // URL to retrieve the PDF template from
-    const url = "http://127.0.0.1:5500/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf";
+    const url = "http://127.0.0.1:5500/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf"; //DEBUG
     // Variables for PDF Loading, Customization, and Download
     var existingPdfBytes, pdfDoc, helvetica, largeFontSize, mediumFontSize, smallFontSize, pages, firstPage, width, height;
 
@@ -712,7 +708,6 @@
       await addImage();
       await downloadPDF();
     };
-    // END CONTROLLER FUNCTION
 
     // BASIC INFORMATION INPUT FEATURE
     function getInfo() {
@@ -750,54 +745,50 @@
         throw new Error("Parent name failed RegEx check. RegEx result array: " + okParentName);
       } 
 
-      /*
-      This phone validator RegEx expression was written by Branislav Dinic on Regexr.com
-      regexr.com/38ohj
-      */
+      // This phone validator RegEx expression was written by Branislav Dinic on Regexr.com (regexr.com/38ohj)
       const phoneRegEx = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/g;
       const okPhone = phoneRegEx.exec(phoneNumber);
+
       if (okPhone == null && phoneNumber != "") {
         // If phone number contains unexpected characters, dispaly explanatory text and throw an error
         document.getElementById("phoneNumberError").textContent = "Please enter a valid phone number.";
         throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
       } 
       
-      /*
-      This email validator RegEx expression was written by Tripleaxis on Regexr.com
-      regexr.com/2rhq7
-      */ 
+      // This email validator RegEx expression was written by Tripleaxis on Regexr.com (regexr.com/2rhq7) 
       const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
       const okEmail = emailRegEx.exec(email);
+
       if (okEmail == null && email != "") {
         // If email contains unexpected characters, dispaly explanatory text and throw an error
         document.getElementById("emailError").textContent = "Please enter a valid email.";
         throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
       } 
     };
-    // END BASIC INFORMATION INPUT FEATURE
 
     // TAG SELECTION FEATURE
     function addSuggestedTag(sectionID, id, tagString) {
 
-      // Hide suggestion tag
-      document.getElementById("suggestedTag".concat(sectionID).concat(id)).style.display = 'none';
-
-      // Add tag to the appropriate section array
+      // Add tag to the appropriate section array. If 10 tags have already been added, the function halts and returns
       switch(sectionID) {
-        case 0: addedStrengthTags.push("- ".concat(tagString)); break;
-        case 1: addedWorksForMeTags.push("- ".concat(tagString)); break;
-        case 2: addedDoesntWorkTags.push("- ".concat(tagString)); break;
-        case 3: addedWorkingOnTags.push("- ".concat(tagString)); break; 
-        case 4: addedWhatILoveTags.push("- ".concat(tagString)); break;
-        default: console.log("Error Adding Tag " + sectionID + " " + id + " " + tagString); break;
+        case 0: if (addedStrengthTags.length > 9) return; addedStrengthTags.push("- ".concat(tagString)); break;
+        case 1: if (addedWorksForMeTags.length > 9) return; addedWorksForMeTags.push("- ".concat(tagString)); break;
+        case 2: if (addedDoesntWorkTags.length > 9) return; addedDoesntWorkTags.push("- ".concat(tagString)); break;
+        case 3: if (addedWorkingOnTags.length > 9) return; addedWorkingOnTags.push("- ".concat(tagString)); break; 
+        case 4: if (addedWhatILoveTags.length > 9) return; addedWhatILoveTags.push("- ".concat(tagString)); break;
+        default: console.log("Error Adding Tag " + sectionID + " " + id + " " + tagString); return; break;
       }
+
+      // If the tag has successfully been added, hide the suggested tag
+      document.getElementById("suggestedTag".concat(sectionID).concat(id)).style.display = 'none';
 
       // Update display after tag is added
       updateTagDisplay(sectionID);
     };
 
     function addCustomTag(sectionID) {
-      /* tagText stores the text of a field before it is cleared, specifiedTagArray holds the name of one of the five possible tag arrays, 
+      /* 
+      tagText stores the text of a field before it is cleared, specifiedTagArray holds the name of one of the five possible tag arrays, 
       tagEntryID holds the string ID attribute of a text field, and tagEntrySubmitID holds the string ID of the submit button that corresponds to tagEntryID's field
       */
       var tagText, specificTagArray, tagEntryID, tagEntrySubmitID;
@@ -830,6 +821,7 @@
           break;
         default: return;
       };
+
       /*The sectionID specifies which section the tag entry is in, and thus what array the custom tag should be added to.
       1. The text from the field is gotten and stored in tagText
       2. The value of the field is cleared by being set to an empty string
@@ -838,17 +830,22 @@
 
       const regExTagCheck = /\W/g;
       const okTagText = regExTagCheck.exec(tagText);
+
       if (okTagText != null) {
+
         console.log("Aborted adding tag due to error. Details: " + sectionID + " " + specificTagArray + " " + tagEntryID + " " + tagEntrySubmitID);
         return;
       }
 
       tagText = document.getElementById(tagEntryID).value;
       document.getElementById(tagEntryID).value = '';
-      if (specificTagArray.length < 9) { 
+
+      if (specificTagArray.length < 9) {
+
         specificTagArray.push("- ".concat(tagText));
         updateTagDisplay(sectionID);
       } else {
+
         // Max tags per section is 10, submit button is disabled after adding the 10th tag
         document.getElementById(tagEntrySubmitID).disabled = true;
         specificTagArray.push("- ".concat(tagText));
@@ -916,13 +913,15 @@
     async function readImage(file) {
       console.log("readImage function triggered"); //DEBUG
       
-      // Check if the file is an image.
-      if (file.type && !(file.type.startsWith('image/jpeg') || file.type.startsWith('image/png'))) {
+      // Check if the file is an image of the type jpeg, jpg or png.
+      if (file.type && !( file.type.startsWith('image/jpeg') || file.type.startsWith('image/jpg') || file.type.startsWith('image/png') ) ) {
+
         document.getElementById("imageUploadError").textContent = "File type not supported. Please upload another image.";
         throw new Error("File is not an image." + file.type);
         return;
       }
 
+      // Creates a FileReader to read in the image as a uint8Array
       const reader = new FileReader();
       reader.addEventListener('load', (event) => {
         imageAsUint8Array = event.target.result;
@@ -934,6 +933,7 @@
 
     // PDF CUSTOMIZATION AND DOWNLOAD FEATURE
     async function loadPDF() {
+      // Loads the PDF from the expected URL
       existingPdfBytes = await fetch(url).then(res => res.arrayBuffer());
       pdfDoc = await PDFDocument.load(existingPdfBytes);
 
@@ -1112,15 +1112,17 @@
       // Save and download the PDF
       const pdfBytes = await pdfDoc.save();
       let blob = new Blob([pdfBytes], {type: "application/pdf"});
+
       // Create an anchor tag set to download blob on click
       let link = document.createElement('a');
       link.download = 'customizedPDF.pdf';
       link.href = URL.createObjectURL(blob);
+
       // Simulate a click
       link.click();
+
       // Revoke Object URL once download has been initiated
       URL.revokeObjectURL(link.href);
-
     };
 
     // END PDF CUSTOMIZATION AND DOWNLOAD FEATURE
