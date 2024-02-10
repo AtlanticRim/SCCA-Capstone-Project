@@ -81,10 +81,12 @@
   background: #1f9cd0 !important;
   width: 100%;
   max-width: 1200px;
+  border-radius: 0.5%;
 
   #pdf-customization-lightbox {
     background: #ffffff;
     color: #000000;
+    
   
     h3 {
     font-size: 32px;
