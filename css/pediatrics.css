@@ -87,6 +87,11 @@
     background: #ffffff;
     color: #000000;
     
+    h1 {
+      font-size: 3em;
+      color: #1f9cd0;
+      text-align: center;
+    }
   
     h3 {
     font-size: 32px;

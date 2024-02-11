@@ -419,6 +419,14 @@
   <!--PDF Customization Lightbox-->
   <div id="hider-div" style="display: none">
     <div id="pdf-customization-lightbox" class="lightbox">
+      <div class="row" id="titleAndIntro">
+        <div class="col-12 text-center">
+          <h1 class="py-md-4">"Meet My Child" Flyer Personalizer</h1>
+          <p>A "Meet My Child" Flyer can be a great way to introduce your child to educators. It can start a dialogue between parents and educators about what the child needs to succeed in the classroom.</p>
+          <p>Follow the steps to create a flyer personalized with information about your child, a picture of your child, and ways for educators to contact you. Any information you enter will not be stored by the South Carolina Cancer Alliance.</p>
+        </div>
+      </div><!--End intro-->
+
       <div class="row">
         <div class="col-12" id="informationEntry">
           <h3 class="py-2">1. Enter Basic Information</h3>
@@ -472,9 +480,9 @@
 
       <!--Tag Selection-->
       <div class="row py-md-4" id="strengthsTagSelection">
-        <div class="row-md pl-md-4">
+        <div class="row-md pl-md-3">
+          <h3 class="py-2">4. Highlight Some of Your Child's Strengths</h3>
           <div class="col-12" id="strengthTags">
-            <h3 class="py-2">4. Highlight Some of Your Child's Strengths</h3>
             <p>Select up to 10 tags that show off some of your child's best talents. You can use the recommended tags or enter your own.</p>
             <p>Your selected tags will appear here:</p>
             <!--10 Strength Tags-->
@@ -506,9 +514,9 @@
       </div>
 
       <div class="row py-md-4" id="worksForMeTagSelection">
-        <div class="row-md pl-md-4">
+        <div class="row-md pl-md-3">
+          <h3 class="py-2">5. Let Educators Know What Works for Your Child</h3>
           <div class="col-12" id="worksForMeTags">
-            <h3 class="py-2">5. Let Educators Know What Works for Your Child</h3>
             <p>Select up to 10 tags that describe teaching strategies that help your child learn. You can use the recommended tags or enter your own.</p>
             <p>Your selected tags will appear here:</p>
             <!--10 worksForMe Tags-->
@@ -540,9 +548,9 @@
       </div>
 
       <div class="row py-md-4" id="doesntWorkTagSelection">
-        <div class="row-md pl-md-4">
+        <div class="row-md pl-md-3">
+          <h3 class="py-2">6. Let Educators Know What Doesn't Work for Your Child</h3>
           <div class="col-12" id="doesntWorkTags">
-            <h3 class="py-2">6. Let Educators Know What Doesn't Work for Your Child</h3>
             <p>Select up to 10 tags that describe things your child struggles with, or teaching strategies that should be avoided. You can use the recommended tags or enter your own.</p>
             <p>Your selected tags will appear here:</p>
             <!--10 doesntWork Tags-->
@@ -574,9 +582,9 @@
       </div>
 
       <div class="row py-md-4" id="workingOnTagSelection">
-        <div class="row-md pl-md-4">
+        <div class="row-md pl-md-3">
+          <h3 class="py-2">7. Tell Educators What Your Child Is Working On</h3>
           <div class="col-12" id="workingOnTags">
-            <h3 class="py-2">7. Tell Educators What Your Child Is Working On</h3>
             <p>Select up to 10 tags that describe skills your child is still working on. You can use the recommended tags or enter your own.</p>
             <p>Your selected tags will appear here:</p>
             <!--10 workingOn Tags-->
@@ -608,9 +616,9 @@
       </div>
 
       <div class="row py-md-4" id="whatILoveTagSelection">
-        <div class="row-md pl-md-4">
+        <div class="row-md pl-md-3">
+          <h3 class="py-2">8. List Some Things Your Child Loves</h3>
           <div class="col-12" id="whatILoveTags">
-            <h3 class="py-2">8. List Some Things Your Child Loves</h3>
             <p>Select up to 10 tags that describe things your child loves. These can be objects, people, or ideas! You can use the recommended tags or enter your own.</p>
             <p>Your selected tags will appear here:</p>
             <!--10 whatILove Tags-->
@@ -644,6 +652,7 @@
       <div class="row py-2" id="submitButtonRowDiv">
         <div class="col-12 text-center" id="submitButtonDiv">
           <button type="submit" id="submitButton" title="Submit Information" class="large-purple-button" onclick="personalizePDF()">Submit Information</button>
+          <p class="pt-4">Privacy Statement: Any information entered into this form will be temporarily stored by your browser, and will not be stored by the South Carolina Cancer Alliance or any third-party. This information will not be used in any way, except to generate a temporary copy of a personalized "Meet My Child" Flyer.</p>
         </div>
       </div>
     </div><!--End pdf-customization-lightbox-->
