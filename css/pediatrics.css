@@ -124,7 +124,9 @@
 
     input {
       font-size: 18px;
-      margin: 2px;
+      overflow: auto;
+      display: inline-block;
+      max-width: 100%;
     }
   
     .pdf-customization-input {
@@ -177,7 +179,9 @@
 
   input {
     font-size: 18px;
-    margin: 2px;
+    overflow: auto;
+    display: inline-block;
+    max-width: 100%;
   }
 
   .pdf-customization-input {
