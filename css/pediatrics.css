@@ -76,7 +76,7 @@
 
 }
 
-/*CSS for PDF Customization Lightbox on Education Toolkit page*/
+/*CSS for PDF Customization Lightbox on Education Toolkit page FOR ET PAGE*/
 .pdf-customization-lightbox .featherlight-content{
   background: #1f9cd0 !important;
   width: 100%;
@@ -132,6 +132,58 @@
       font-size: 18px;
       margin-top: 2%;
     }
+  }
+}
+
+/*CSS for PDF Customization Lightbox on Education Toolkit page FOR PDF CUSTOM PAGE*/
+#pdf-customization-lightbox {
+  background: #ffffff;
+  color: #000000;
+  
+  h1 {
+    font-size: 3em;
+    color: #1f9cd0;
+    text-align: center;
+  }
+
+  h3 {
+  font-size: 32px;
+  }
+
+  .row {
+    padding-left: 2%;
+  }
+
+  .pdf-customization-tag {
+    /* The default display for tags is none
+    This will be overridden once a value is assigned to the tag via JavaScript code
+    Then, the tag will be visible.*/
+    display: none;
+
+    /*This CSS is similar to the suggested-tag-button CSS */
+    background: #dee2ea;
+    border: 2px solid #1f9cd0;
+    margin-left: 1%;
+    margin-bottom: 1%;
+  }
+
+  .suggested-tag-button {
+    background: #dee2ea;
+    border: 2px solid #1f9cd0;
+    font-size: 18px;
+    margin-left: 1%;
+    margin-bottom: 1%;
+    }
+
+  input {
+    font-size: 18px;
+    margin: 2px;
+  }
+
+  .pdf-customization-input {
+    background: #dee2ea;
+    font-size: 18px;
+    margin-top: 2%;
   }
 }
 
