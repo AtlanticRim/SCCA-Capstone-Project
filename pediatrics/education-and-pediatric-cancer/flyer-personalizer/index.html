@@ -248,7 +248,6 @@
           
                         <label for="childLastName" class="pt-2">Child's Last Name</label><br>
                         <input type="text" id="childLastName" name="childLastName"><br>
-                        <p id="childNameError"></p>
                       </div>
           
                       <div class="col-lg-6">
@@ -257,22 +256,17 @@
           
                         <label for="parentLastName" class="pt-2">Parent/Guardian's Last Name</label><br>
                         <input type="text" id="parentLastName" name="parentLastName"><br>
-                        <p id="parentNameError"></p>
                       </div>
                     </div>
           
                     <h3 class="py-2">2. Enter Your Contact Information (optional)</h3>
                     <div class="row py-md-2">
                       <div class="col-lg-12 pl-md-4">
-                        
                         <label for="phoneNumber">Phone Number</label><br>
-                        <input type="text" id="phoneNumber" name="phoneNumber"><br>
-                        <p id="phoneNumberError"></p>
-          
+                        <input type="text" id="phoneNumber" name="phoneNumber"><br>          
           
                         <label for="email">Email Address</label><br>
                         <input type="text" id="email" name="email"><br>
-                        <p id="emailError"></p>
                       </div>
                     </div>
           
@@ -448,7 +442,16 @@
                       <button type="submit" id="customWhatILoveTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(4)">Add Custom Tag</button>
                     </div>
                 </div>
-          
+                
+                <div class="row py-2 text-center">
+                  <div class="col-12" id="errorDisplay">
+                    <p id="childNameErrorDisplay"></p>
+                    <p id="parentNameErrorDisplay"></p>
+                    <p id="phoneNumberErrorDisplay"></p>
+                    <p id="emailErrorDisplay"></p>
+                    <p id="unknownErrorDisplay"></p>
+                  </div>
+                </div>
                 <div class="row py-2" id="submitButtonRowDiv">
                   <div class="col-12 text-center" id="submitButtonDiv">
                     <button type="submit" id="submitButton" title="Submit Information" class="large-purple-button" onclick="personalizePDF()">Submit Information</button>
@@ -610,14 +613,16 @@
       const okChildName = nameRegEx.exec(childName);
       if (okChildName != null) {
         // If child name contains unexpected characters, dispaly explanatory text and throw an error
-        document.getElementById("childNameError").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
+        document.getElementById("childNameErrorDisplay").style.display = 'inline';
+        document.getElementById("childNameErrorDisplay").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
         throw new Error("Child name failed RegEx check. RegEx result array: " + okChildName);
       }
 
       const okParentName = nameRegEx.exec(parentName);
       if (okParentName != null) {
         // If parent name contains unexpected characters, dispaly explanatory text and throw an error
-        document.getElementById("parentNameError").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
+        document.getElementById("parentNameErrorDisplay").style.display = 'inline';
+        document.getElementById("parentNameErrorDisplay").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
         throw new Error("Parent name failed RegEx check. RegEx result array: " + okParentName);
       } 
 
@@ -627,7 +632,8 @@
 
       if (okPhone == null && phoneNumber != "") {
         // If phone number contains unexpected characters, dispaly explanatory text and throw an error
-        document.getElementById("phoneNumberError").textContent = "Please enter a valid phone number.";
+        document.getElementById("phoneNumberErrorDisplay").style.display = 'inline';
+        document.getElementById("phoneNumberErrorDisplay").textContent = "Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.";
         throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
       } 
       
@@ -637,7 +643,8 @@
 
       if (okEmail == null && email != "") {
         // If email contains unexpected characters, dispaly explanatory text and throw an error
-        document.getElementById("emailError").textContent = "Please enter a valid email.";
+        document.getElementById("emailErrorDisplay").style.display = 'inline';
+        document.getElementById("emailErrorDisplay").textContent = "Please enter a valid email address, or leave the email address field blank.";
         throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
       } 
     };

@@ -136,6 +136,17 @@
     font-size: 18px;
     margin-top: 2%;
   }
+
+  #errorDisplay p {
+    /* Div that displays any errors from input validaion for the user to fix.*/
+    border: solid;
+    border-color: #f06543; 
+    border-radius: 0.5%;
+    padding: 1%;
+
+    /*Default display is none, it will be set to visible by JavaScript once an error is thrown */
+    display: none;
+  }
 }
 
 /*Pediatric Resource Guide nav CSS
