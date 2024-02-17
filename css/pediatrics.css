@@ -30,6 +30,11 @@
     min-height: 100px;
   }
 
+  .intro-text {
+    /*Only used on Flyer Personalizer page*/
+    font-size: 125%
+  }
+
   .parent-cta {
     background: url("../img/ET_ParentsBanner.png");
     background-size: cover;
@@ -141,6 +146,9 @@
 #pdf-customization-lightbox {
   background: #ffffff;
   color: #000000;
+  border: solid;
+  border-color: #1f9cd0; 
+  border-radius: 0.5%;
   
   h1 {
     font-size: 3em;
