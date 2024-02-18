@@ -99,7 +99,8 @@
   font-size: 32px;
   }
 
-  .row {
+  .flyer-row {
+    /* This applies only to the four rows in the Flyer Customizer */
     padding-left: 2%;
   }
 
@@ -112,6 +113,7 @@
     /*This CSS is similar to the suggested-tag-button CSS */
     background: #dee2ea;
     border: 2px solid #1f9cd0;
+    font-size: 18px;
     margin-left: 1%;
     margin-bottom: 1%;
   }

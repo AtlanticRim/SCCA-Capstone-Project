@@ -237,11 +237,11 @@
                 </div>
               </div><!--End intro-->
               <div id="pdf-customization-lightbox">              
-                <div class="row">
+                <div class="row flyer-row">
                   <div class="col-12" id="informationEntry">
-                    <h3 class="py-2">1. Enter Basic Information</h3>
-                    
-                    <div class="row pb-md-3">
+
+                    <h3 class="pt-4">1. Enter Your Child's Name and Your Name</h3>
+                    <div class="row py-md-2">
                       <div class="col-lg-6 pl-md-4">
                         <label for="childFirstName" class="pt-2">Child's First Name</label><br>
                         <input type="text" id="childFirstName" name="childFirstName"><br>
@@ -259,7 +259,7 @@
                       </div>
                     </div>
           
-                    <h3 class="py-2">2. Enter Your Contact Information (optional)</h3>
+                    <h3 class="pt-4">2. Enter Your Contact Information (optional)</h3>
                     <div class="row py-md-2">
                       <div class="col-lg-12 pl-md-4">
                         <label for="phoneNumber">Phone Number</label><br>
@@ -270,9 +270,9 @@
                       </div>
                     </div>
           
-                    <h3 class="py-2">3. Upload an Image (optional)</h3>
+                    <h3 class="pt-4">3. Upload a Picture of Your Child (optional)</h3>
                     <div class="row py-md-2">
-                      <div class="col-lg">
+                      <div class="col-lg-12">
                         <p>Recommended: Picture of the head and shoulders, at least 700x700 pixels.</p>
                         <label for="imageUpload" class="py-1">Upload Image</label><br>
                         <input type="file" id="imageUpload" title="Select an image to upload" accept=".png, .jpg, .jpeg" />
@@ -283,9 +283,9 @@
                 </div><!--End row-->
           
                 <!--Tag Selection-->
-                <div class="row py-md-4" id="strengthsTagSelection">
-                    <h3 class="py-2">4. Highlight Some of Your Child's Strengths</h3>
+                <div class="row py-md-4 flyer-row" id="strengthsTagSelection">
                     <div class="col-12" id="strengthTags">
+                      <h3 class="py-2">4. Highlight Some of Your Child's Strengths</h3>
                       <p>Select up to 10 tags that show off some of your child's best talents. You can use the recommended tags or enter your own.</p>
                       <p>Your selected tags will appear here:</p>
                       <!--10 Strength Tags-->
@@ -315,9 +315,9 @@
                     </div>
                 </div>
           
-                <div class="row py-md-4" id="worksForMeTagSelection">
-                    <h3 class="py-2">5. Let Educators Know What Works for Your Child</h3>
+                <div class="row py-md-4 flyer-row" id="worksForMeTagSelection">
                     <div class="col-12" id="worksForMeTags">
+                      <h3 class="py-2">5. Let Educators Know What Works for Your Child</h3>
                       <p>Select up to 10 tags that describe teaching strategies that help your child learn. You can use the recommended tags or enter your own.</p>
                       <p>Your selected tags will appear here:</p>
                       <!--10 worksForMe Tags-->
@@ -347,9 +347,9 @@
                     </div>
                 </div>
           
-                <div class="row py-md-4" id="doesntWorkTagSelection">
-                    <h3 class="py-2">6. Let Educators Know What Doesn't Work for Your Child</h3>
+                <div class="row py-md-4 flyer-row" id="doesntWorkTagSelection">
                     <div class="col-12" id="doesntWorkTags">
+                      <h3 class="py-2">6. Let Educators Know What Doesn't Work for Your Child</h3>
                       <p>Select up to 10 tags that describe things your child struggles with, or teaching strategies that should be avoided. You can use the recommended tags or enter your own.</p>
                       <p>Your selected tags will appear here:</p>
                       <!--10 doesntWork Tags-->
@@ -379,9 +379,9 @@
                     </div>
                 </div>
           
-                <div class="row py-md-4" id="workingOnTagSelection">
-                    <h3 class="py-2">7. Tell Educators What Your Child Is Working On</h3>
+                <div class="row py-md-4  flyer-row" id="workingOnTagSelection">
                     <div class="col-12" id="workingOnTags">
+                      <h3 class="py-2">7. Tell Educators What Your Child Is Working On</h3>
                       <p>Select up to 10 tags that describe skills your child is still working on. You can use the recommended tags or enter your own.</p>
                       <p>Your selected tags will appear here:</p>
                       <!--10 workingOn Tags-->
@@ -411,9 +411,9 @@
                     </div>
                 </div>
           
-                <div class="row py-md-4" id="whatILoveTagSelection">
-                    <h3 class="py-2">8. List Some Things Your Child Loves</h3>
+                <div class="row py-md-4 flyer-row" id="whatILoveTagSelection">
                     <div class="col-12" id="whatILoveTags">
+                      <h3 class="py-2">8. List Some Things Your Child Loves</h3>
                       <p>Select up to 10 tags that describe things your child loves. These can be objects, people, or ideas! You can use the recommended tags or enter your own.</p>
                       <p>Your selected tags will appear here:</p>
                       <!--10 whatILove Tags-->
@@ -837,7 +837,7 @@
       
       // Draw Child Name
       firstPage.drawText(childName, {
-          x: 1770,
+          x: 1735,
           y: 2250,
           size: largeFontSize,
           font: helvetica,
@@ -846,8 +846,8 @@
 
       // Draw Parent Name
       firstPage.drawText(parentName, {
-          x: 50,
-          y: 2210,
+          x: 55,
+          y: 2220,
           size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -855,8 +855,8 @@
 
       // Draw PhoneNumber
       firstPage.drawText(phoneNumber, {
-          x: 50,
-          y: 2135,
+          x: 55,
+          y: 2130,
           size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -864,8 +864,8 @@
 
       // Draw Email
       firstPage.drawText(email, {
-          x: 50,
-          y: 2075,
+          x: 55,
+          y: 2070,
           size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -874,12 +874,13 @@
 
     function drawTags() {
       // These arrays hold the x and y values for each of the tags to be drawn
-      const xVals = [60, 880, 1695];
-      const box1YVals = [1891, 1826, 1746, 1699];// Unconverted
-      const box2YVals = [1521, 1459, 1395, 1331];
-      const box3YVals = [1151, 1087, 1023, 960];
-      const box4YVals = [781, 717, 653, 589];
-      const box5YVals = [416, 351, 287, 224];
+      // PDF-LIB assumes the BOTTOM LEFT corner of the PDF is (0,0). These Y-values are adjusted for that fact
+      const xVals = [65, 885, 1705]; // Gap of 85px between columns
+      const box1YVals = [1910, 1845, 1780, 1715];// Gap of 65px between rows
+      const box2YVals = [1545, 1480, 1415, 1350];
+      const box3YVals = [1170, 1105, 1040, 975];
+      const box4YVals = [795, 730, 665, 600];
+      const box5YVals = [420, 355, 290, 225];
       
       var index = 0;
       while (addedStrengthTags[index] != undefined) {
@@ -887,8 +888,8 @@
           for (var j=0; j<3; j++) {
             if (addedStrengthTags[index] == undefined) continue;
             firstPage.drawText(addedStrengthTags[index], {
-              x: xVals[i],
-              y: box1YVals[j],
+              x: xVals[j],
+              y: box1YVals[i],
               size: smallFontSize,
               font: helvetica,
               color: rgb(0,0,0)
@@ -904,8 +905,8 @@
           for (var j=0; j<3; j++) {
             if (addedWorksForMeTags[index] == undefined) continue;
             firstPage.drawText(addedWorksForMeTags[index], {
-              x: xVals[i],
-              y: box2YVals[j],
+              x: xVals[j],
+              y: box2YVals[i],
               size: smallFontSize,
               font: helvetica,
               color: rgb(0,0,0)
@@ -921,8 +922,8 @@
           for (var j=0; j<3; j++) {
             if (addedDoesntWorkTags[index] == undefined) continue;
             firstPage.drawText(addedDoesntWorkTags[index], {
-              x: xVals[i],
-              y: box3YVals[j],
+              x: xVals[j],
+              y: box3YVals[i],
               size: smallFontSize,
               font: helvetica,
               color: rgb(0,0,0)
@@ -938,8 +939,8 @@
           for (var j=0; j<3; j++) {
             if (addedWorkingOnTags[index] == undefined) continue;
             firstPage.drawText(addedWorkingOnTags[index], {
-              x: xVals[i],
-              y: box4YVals[j],
+              x: xVals[j],
+              y: box4YVals[i],
               size: smallFontSize,
               font: helvetica,
               color: rgb(0,0,0)
@@ -955,8 +956,8 @@
           for (var j=0; j<3; j++) {
             if (addedWhatILoveTags[index] == undefined) continue;
             firstPage.drawText(addedWhatILoveTags[index], {
-              x: xVals[i],
-              y: box5YVals[j],
+              x: xVals[j],
+              y: box5YVals[i],
               size: smallFontSize,
               font: helvetica,
               color: rgb(0,0,0)
@@ -984,7 +985,7 @@
       
       // Draw image on the PDF
       firstPage.drawImage (imageToEmbed, {
-          x: 1805, // X position of image field on the page
+          x: 1770, // X position of image field on the page
           y: 2355, // Y postion of the image field on the page
           width: imageScaled.width,
           height: imageScaled.height
