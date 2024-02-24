@@ -443,13 +443,13 @@
                     </div>
                 </div>
                 
-                <div class="row py-2 text-center">
-                  <div class="col-12" id="errorDisplay">
-                    <p id="childNameErrorDisplay"></p>
-                    <p id="parentNameErrorDisplay"></p>
-                    <p id="phoneNumberErrorDisplay"></p>
-                    <p id="emailErrorDisplay"></p>
-                    <p id="unknownErrorDisplay"></p>
+                <div class="row py-2 justify-content-center">
+                  <div class="col-10  text-center" id="errorDisplay">
+                    <p id="childNameErrorDisplay">Please enter a valid child name. Names may only contain letters, hyphens, and apostrophies.</p>
+                    <p id="parentNameErrorDisplay">Please enter a valid parent/guardian name. Names may only contain letters, hyphens, and apostrophies.</p>
+                    <p id="phoneNumberErrorDisplay">Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.</p>
+                    <p id="emailErrorDisplay">Please enter a valid email address, or leave the email address field blank.</p>
+                    <p id="unknownErrorDisplay">Unknown error. Please refresh the page.</p>
                   </div>
                 </div>
                 <div class="row py-2" id="submitButtonRowDiv">
@@ -608,43 +608,55 @@
     function regExCheck() {
       // This method tests the form inputs against RegEx patterns
 
+      // Reset all error fields back to hidden
+      document.getElementById("errorDisplay").style.display = 'none';
+      document.getElementById("childNameErrorDisplay").style.display = 'none';
+      document.getElementById("parentNameErrorDisplay").style.display = 'none';
+      document.getElementById("phoneNumberErrorDisplay").style.display = 'none';
+      document.getElementById("unknownErrorDisplay").style.display = 'none';
+      document.getElementById("emailErrorDisplay").style.display = 'none';
+
       const nameRegEx = /[^a-zA-Z-'ñÑ., ]/g;
 
       const okChildName = nameRegEx.exec(childName);
       if (okChildName != null) {
-        // If child name contains unexpected characters, dispaly explanatory text and throw an error
+        // If child name contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
+        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("childNameErrorDisplay").style.display = 'inline';
-        document.getElementById("childNameErrorDisplay").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
+        window.alert("Please enter a valid child name. Names may only contain letters, hyphens, and apostrophies.");
         throw new Error("Child name failed RegEx check. RegEx result array: " + okChildName);
       }
 
       const okParentName = nameRegEx.exec(parentName);
       if (okParentName != null) {
-        // If parent name contains unexpected characters, dispaly explanatory text and throw an error
+        // If parent name contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
+        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("parentNameErrorDisplay").style.display = 'inline';
-        document.getElementById("parentNameErrorDisplay").textContent = "Please enter a valid name. Names may only contain letters, hyphens, and apostrophies.";
+        window.alert("Please enter a valid parent/guardian name. Names may only contain letters, hyphens, and apostrophies.");
         throw new Error("Parent name failed RegEx check. RegEx result array: " + okParentName);
-      } 
+      }
 
-      // This phone validator RegEx expression was written by Branislav Dinic on Regexr.com (regexr.com/38ohj)
-      const phoneRegEx = /(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})/g;
+      // This phone validator RegEx expression was modified from: regexr.com/38ohj
+      const phoneRegEx = /^(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})$/g;
       const okPhone = phoneRegEx.exec(phoneNumber);
 
       if (okPhone == null && phoneNumber != "") {
-        // If phone number contains unexpected characters, dispaly explanatory text and throw an error
+        // If phone number contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
+        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("phoneNumberErrorDisplay").style.display = 'inline';
-        document.getElementById("phoneNumberErrorDisplay").textContent = "Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.";
+        window.alert("Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.");
         throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
       } 
       
-      // This email validator RegEx expression was written by Tripleaxis on Regexr.com (regexr.com/2rhq7) 
-      const emailRegEx = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g;
+      // This email validator RegEx expression was modified from: regexr.com/2rhq7
+      const emailRegEx = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/g;
       const okEmail = emailRegEx.exec(email);
 
       if (okEmail == null && email != "") {
-        // If email contains unexpected characters, dispaly explanatory text and throw an error
+        // If email contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
+        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("emailErrorDisplay").style.display = 'inline';
-        document.getElementById("emailErrorDisplay").textContent = "Please enter a valid email address, or leave the email address field blank.";
+        window.alert("Please enter a valid email address, or leave the email address field blank.");
         throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
       } 
     };

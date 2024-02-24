@@ -139,7 +139,7 @@
     margin-top: 2%;
   }
 
-  #errorDisplay p {
+  #errorDisplay{
     /* Div that displays any errors from input validaion for the user to fix.*/
     border: solid;
     border-color: #f06543; 
