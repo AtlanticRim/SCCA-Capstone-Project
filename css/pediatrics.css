@@ -1,5 +1,9 @@
 /* CSS specific to the Pediatric Resource Guide pages */
 .pediatric-resource-guide {
+  .large-purple-button {
+    cursor: pointer;
+  }
+  
   .full-width {
     width: 100%;
   }
@@ -17,22 +21,14 @@
 /* CSS specific to the Education Toolkit pages */
 .education-toolkit {
 
-  .citation {
-    font-size: 75%;
-    word-wrap: break-word;
-  }
-
-  .full-width {
+  .large-purple-button {
+    cursor: pointer;
     width: 80%;
   }
 
-  .standard-min-height {
-    min-height: 100px;
-  }
-
-  .intro-text {
-    /*Only used on Flyer Personalizer page*/
-    font-size: 125%
+  .citation {
+    font-size: 75%;
+    word-wrap: break-word;
   }
 
   .parent-cta {
@@ -81,7 +77,7 @@
 
 }
 
-/*CSS for PDF Customization Lightbox on Flyer Customizer Education Toolkit page*/
+/*CSS for PDF Customization Lightbox on Flyer Customizer page*/
 #pdf-customization-lightbox {
   background: #ffffff;
   color: #000000;
@@ -97,6 +93,10 @@
 
   h3 {
   font-size: 32px;
+  }
+
+  .large-purple-button {
+    cursor: pointer;
   }
 
   .flyer-row {
@@ -116,6 +116,7 @@
     font-size: 18px;
     margin-left: 1%;
     margin-bottom: 1%;
+    cursor: pointer;
   }
 
   .suggested-tag-button {
@@ -124,6 +125,7 @@
     font-size: 18px;
     margin-left: 1%;
     margin-bottom: 1%;
+    cursor: pointer;
     }
 
   input {
@@ -137,6 +139,7 @@
     background: #dee2ea;
     font-size: 18px;
     margin-top: 2%;
+    cursor: pointer;
   }
 
   #errorDisplay{
