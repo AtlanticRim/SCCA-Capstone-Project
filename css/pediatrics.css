@@ -104,6 +104,11 @@
     padding-left: 2%;
   }
 
+  .required:after {
+    content:" *";
+    color: red;
+  }
+
   .pdf-customization-tag {
     /* The default display for tags is none
     This will be overridden once a value is assigned to the tag via JavaScript code
