@@ -216,7 +216,7 @@
   <!-- End nav element-->
   </header>
         
-  <section class="content education-toolkit">
+  <section class="content">
     <div class="hero">
 
 
@@ -232,8 +232,8 @@
             <div class="main-content"><!--Main Content Div-->
               <div class="row" id="titleAndIntro">
                 <div class="col-12">
-                  <p class="intro-text pt-4">A "Get to Know My Child" Flyer can be a great way to introduce your child to educators. It can begin communication between parents and educators about what the child needs to succeed in the classroom.</p>
-                  <p class="intro-text">Follow the steps to create a flyer personalized with information about your child, a picture of your child, and ways for educators to contact you. <br> <a href="#privacyStatement">Any information you enter will not be stored by the South Carolina Cancer Alliance</a>.</p>
+                  <p class="pt-4" style="font-size: 125%;">A "Get to Know My Child" Flyer can be a great way to introduce your child to educators. It can begin communication between parents and educators about what the child needs to succeed in the classroom.</p>
+                  <p style="font-size: 125%;">Follow the steps to create a flyer personalized with information about your child, a picture of your child, and ways for educators to contact you. <br> <a href="#privacyStatement">Any information you enter will not be stored by the South Carolina Cancer Alliance</a>.</p>
                 </div>
               </div><!--End intro-->
               <div id="pdf-customization-lightbox">              
@@ -243,18 +243,18 @@
                     <h3 class="pt-4">1. Enter Your Child's Name and Your Name</h3>
                     <div class="row py-md-2">
                       <div class="col-lg-6 pl-md-4">
-                        <label for="childFirstName" class="pt-2">Child's First Name</label><br>
+                        <label for="childFirstName" class="pt-2 required">Child's First Name</label><br>
                         <input type="text" id="childFirstName" name="childFirstName"><br>
           
-                        <label for="childLastName" class="pt-2">Child's Last Name</label><br>
+                        <label for="childLastName" class="pt-2 required">Child's Last Name</label><br>
                         <input type="text" id="childLastName" name="childLastName"><br>
                       </div>
           
                       <div class="col-lg-6">
-                        <label for="parentFirstName" class="pt-2">Parent/Guardian's First Name</label><br>
+                        <label for="parentFirstName" class="pt-2 required">Parent/Guardian's First Name</label><br>
                         <input type="text" id="parentFirstName" name="parentFirstName"><br>
           
-                        <label for="parentLastName" class="pt-2">Parent/Guardian's Last Name</label><br>
+                        <label for="parentLastName" class="pt-2 required">Parent/Guardian's Last Name</label><br>
                         <input type="text" id="parentLastName" name="parentLastName"><br>
                       </div>
                     </div>
@@ -588,6 +588,7 @@
     // Tag Elements - whatILove
     const addedWhatILoveTags = new Array();
 
+    const defaultImgUrl = "/img/logo.png" // Default image for the Personalized PDF is SCCA logo
     // Variables and basic update function for image upload
     var imageAsUint8Array;
     const imageUpload = document.getElementById("imageUpload");
@@ -596,14 +597,16 @@
       readImage(file);
     });
 
+
     // URL to retrieve the PDF template from
-    const url = "/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf"; //DEBUG
+    const url = "/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf";
     // Variables for PDF Loading, Customization, and Download
     var existingPdfBytes, pdfDoc, helvetica, largeFontSize, mediumFontSize, smallFontSize, pages, firstPage, width, height;
 
     // CONTROLLER FUNCTION
     async function personalizePDF() {
       // This method controls the flow of the PDF creation process
+      imageAsUint8Array = await fetch(defaultImgUrl).then((res) => res.arrayBuffer()); // Loads default image
       getInfo();
       regExCheck();
       await loadPDF(); // Await keyword so draw functions aren't triggered before PDF is loaded.
