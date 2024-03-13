@@ -588,7 +588,7 @@
     // Tag Elements - whatILove
     const addedWhatILoveTags = new Array();
 
-    const defaultImgUrl = "/img/logo.png" // Default image for the Personalized PDF is SCCA logo
+    const defaultImgUrl = "/img/SCCA_Flyer_Default.png" // Holds link to defautl image, used if user does not upload an image
     // Variables and basic update function for image upload
     var imageAsUint8Array;
     const imageUpload = document.getElementById("imageUpload");
@@ -606,7 +606,6 @@
     // CONTROLLER FUNCTION
     async function personalizePDF() {
       // This method controls the flow of the PDF creation process
-      imageAsUint8Array = await fetch(defaultImgUrl).then((res) => res.arrayBuffer()); // Loads default image
       getInfo();
       regExCheck();
       await loadPDF(); // Await keyword so draw functions aren't triggered before PDF is loaded.
@@ -878,7 +877,7 @@
       // Draw Child Name
       firstPage.drawText(childName, {
           x: 1735,
-          y: 2250,
+          y: 2210,
           size: largeFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -887,7 +886,7 @@
       // Draw Parent Name
       firstPage.drawText(parentName, {
           x: 55,
-          y: 2220,
+          y: 2265,
           size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -896,7 +895,7 @@
       // Draw PhoneNumber
       firstPage.drawText(phoneNumber, {
           x: 55,
-          y: 2130,
+          y: 2170,
           size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -905,7 +904,7 @@
       // Draw Email
       firstPage.drawText(email, {
           x: 55,
-          y: 2070,
+          y: 2110,
           size: mediumFontSize,
           font: helvetica,
           color: rgb(0,0,0)
@@ -918,9 +917,9 @@
       const xVals = [65, 885, 1705]; // Gap of 85px between columns
       const box1YVals = [1910, 1845, 1780, 1715];// Gap of 65px between rows
       const box2YVals = [1545, 1480, 1415, 1350];
-      const box3YVals = [1170, 1105, 1040, 975];
-      const box4YVals = [795, 730, 665, 600];
-      const box5YVals = [420, 355, 290, 225];
+      const box3YVals = [1180, 1115, 1050, 985];
+      const box4YVals = [815, 750, 685, 620];
+      const box5YVals = [450, 385, 320, 255];
       
       var index = 0;
       while (addedStrengthTags[index] != undefined) {
@@ -1010,8 +1009,13 @@
     };
 
     async function addImage() {
-      if (imageAsUint8Array != undefined) var imageToEmbed = await pdfDoc.embedPng(imageAsUint8Array);
-      else return;
+      if (imageAsUint8Array != undefined) {
+        var imageToEmbed = await pdfDoc.embedPng(imageAsUint8Array);
+      }
+      else {
+        imageAsUint8Array = await fetch(defaultImgUrl).then((res) => res.arrayBuffer()); // Loads default image
+        var imageToEmbed = await pdfDoc.embedPng(imageAsUint8Array);
+      }
         
       /* Scales the image to fit in the 700x700 box
       Note: This code is reproduced from https://github.com/Hopding/pdf-lib/blob/b8a44bd/src/api/PDFImage.ts#L96
