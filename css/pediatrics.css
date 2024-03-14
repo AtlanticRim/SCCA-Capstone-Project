@@ -78,7 +78,7 @@
 }
 
 /*CSS for PDF Customization Lightbox on Flyer Customizer page*/
-#pdf-customization-lightbox {
+#pdf-customization {
   background: #ffffff;
   color: #000000;
   border: solid;
@@ -147,15 +147,10 @@
     cursor: pointer;
   }
 
-  #errorDisplay{
-    /* Div that displays any errors from input validaion for the user to fix.*/
-    border: solid;
-    border-color: #f06543; 
-    border-radius: 0.5%;
-    padding: 1%;
-
-    /*Default display is none, it will be set to visible by JavaScript once an error is thrown */
-    display: none;
+  .errorDisplay {
+        /* Messages that display if input validation fails
+        Default display is none, it will be set to visible by JavaScript once an error is thrown */
+        display: none;
   }
 }
 

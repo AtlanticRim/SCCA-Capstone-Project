@@ -236,26 +236,32 @@
                   <p style="font-size: 125%;">Follow the steps to create a flyer personalized with information about your child, a picture of your child, and ways for educators to contact you. <br> <a href="#privacyStatement">Any information you enter will not be stored by the South Carolina Cancer Alliance</a>.</p>
                 </div>
               </div><!--End intro-->
-              <div id="pdf-customization-lightbox">              
+              <div id="pdf-customization">              
                 <div class="row flyer-row">
                   <div class="col-12" id="informationEntry">
 
                     <h3 class="pt-4">1. Enter Your Child's Name and Your Name</h3>
                     <div class="row py-md-2">
-                      <div class="col-lg-6 pl-md-4">
+                      <div class="col-lg-6 pl-md-4" id="childNameEntry">
                         <label for="childFirstName" class="pt-2 required">Child's First Name</label><br>
                         <input type="text" id="childFirstName" name="childFirstName"><br>
           
                         <label for="childLastName" class="pt-2 required">Child's Last Name</label><br>
                         <input type="text" id="childLastName" name="childLastName"><br>
+
+                        <p id="childNameErrorDisplay" class="errorDisplay">Please enter a valid child name. Names may only contain letters, hyphens, and apostrophies.</p>
+
                       </div>
           
-                      <div class="col-lg-6">
+                      <div class="col-lg-6" id="parentNameEntry">
                         <label for="parentFirstName" class="pt-2 required">Parent/Guardian's First Name</label><br>
                         <input type="text" id="parentFirstName" name="parentFirstName"><br>
           
                         <label for="parentLastName" class="pt-2 required">Parent/Guardian's Last Name</label><br>
                         <input type="text" id="parentLastName" name="parentLastName"><br>
+
+                        <p id="parentNameErrorDisplay" class="errorDisplay">Please enter a valid parent/guardian name. Names may only contain letters, hyphens, and apostrophies.</p>
+
                       </div>
                     </div>
           
@@ -264,9 +270,11 @@
                       <div class="col-lg-12 pl-md-4">
                         <label for="phoneNumber">Phone Number</label><br>
                         <input type="text" id="phoneNumber" name="phoneNumber"><br>          
-          
+                        <p id="phoneNumberErrorDisplay" class="errorDisplay">Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.<br></p>
+
                         <label for="email">Email Address</label><br>
                         <input type="text" id="email" name="email"><br>
+                        <p id="emailErrorDisplay" class="errorDisplay">Please enter a valid email address, or leave the email address field blank.</p>
                       </div>
                     </div>
           
@@ -467,23 +475,13 @@
                       <button type="submit" id="customWhatILoveTagEntrySubmit" class="pdf-customization-input" onclick="addCustomTag(4)">Add Custom Tag</button>
                     </div>
                 </div>
-                
-                <div class="row py-2 justify-content-center">
-                  <div class="col-10  text-center" id="errorDisplay">
-                    <p id="childNameErrorDisplay">Please enter a valid child name. Names may only contain letters, hyphens, and apostrophies.</p>
-                    <p id="parentNameErrorDisplay">Please enter a valid parent/guardian name. Names may only contain letters, hyphens, and apostrophies.</p>
-                    <p id="phoneNumberErrorDisplay">Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.</p>
-                    <p id="emailErrorDisplay">Please enter a valid email address, or leave the email address field blank.</p>
-                    <p id="unknownErrorDisplay">Unknown error. Please refresh the page.</p>
-                  </div>
-                </div>
                 <div class="row py-2" id="submitButtonRowDiv">
                   <div class="col-12 text-center" id="submitButtonDiv">
                     <button type="submit" id="submitButton" title="Submit Information" class="large-purple-button" onclick="personalizePDF()">Submit Information</button>
                     <p class="pt-4" id="privacyStatement">Privacy Statement: Any information entered into this form will be temporarily stored by your browser, and will not be stored by the South Carolina Cancer Alliance or any third-party. This information will not be used in any way, except to generate a temporary copy of a personalized "Get to Know My Child" Flyer.</p>
                   </div>
                 </div>
-              </div><!--End pdf-customization-lightbox-->
+              </div>
 
             </div><!--End Main Content-->
           </div><!--End col-lg-->
@@ -565,7 +563,7 @@
       Authors: J. Alan Wallace and Ronisha Genwright
       Contact Info: alanwallaceii2@gmail.com, github.com/AtlanticRim
       Version: 1.0
-      Date Last Updated: Feb 13, 2024
+      Date Last Updated: March 14, 2024
     --------------------------------------------*/
 
     // Constants needed for PDF-LIB to work. 
@@ -588,13 +586,47 @@
     // Tag Elements - whatILove
     const addedWhatILoveTags = new Array();
 
-    const defaultImgUrl = "/img/SCCA_Flyer_Default.png" // Holds link to defautl image, used if user does not upload an image
+    const defaultImgUrl = "/img/SCCA_Flyer_Default.png" // Holds link to default image, used if user does not upload an image
     // Variables and basic update function for image upload
     var imageAsUint8Array;
+
+    // Event listener for image upload
     const imageUpload = document.getElementById("imageUpload");
     imageUpload.addEventListener('change', (event) => {
       const file = event.target.files[0];
       readImage(file);
+    });
+    // Event listners for input validation
+    const childFNameField = document.getElementById("childFirstName");
+    childFNameField.addEventListener('change', (event) => {
+      childName = childFNameField.value.toString() + childLNameField.value.toString();
+      childNameValidation(childName);
+    });
+    const childLNameField = document.getElementById("childLastName");
+    childLNameField.addEventListener('change', (event) => {
+      childName = childFNameField.value.toString() + childLNameField.value.toString();
+      childNameValidation(childName);
+    });
+    const parentFNameField = document.getElementById("parentFirstName");
+    parentFNameField.addEventListener('change', (event) => {
+      parentName = parentFNameField.value.toString() + parentLNameField.value.toString();
+      parentNameValidation(parentName);
+    });
+    const parentLNameField = document.getElementById("parentLastName");
+    parentLNameField.addEventListener('change', (event) => {
+      parentName = parentFNameField.value.toString() + parentLNameField.value.toString();
+      parentNameValidation(parentName);
+    });
+    const phoneNumField = document.getElementById("phoneNumber");
+    phoneNumField.addEventListener('change', (event) => {
+      phoneNumber = phoneNumField.value.toString();
+      phoneNumberValidation(phoneNumber);
+    });
+
+    const emailField = document.getElementById("email");
+    emailField.addEventListener('change', (event) => {
+      email = emailField.value.toString();
+      emailValidation(email);
     });
 
 
@@ -607,7 +639,6 @@
     async function personalizePDF() {
       // This method controls the flow of the PDF creation process
       getInfo();
-      regExCheck();
       await loadPDF(); // Await keyword so draw functions aren't triggered before PDF is loaded.
       drawBasicInformation();
       drawTags();
@@ -632,61 +663,58 @@
       email = document.getElementById("email").value.toString();
     };
 
-    function regExCheck() {
-      // This method tests the form inputs against RegEx patterns
-
-      // Reset all error fields back to hidden
-      document.getElementById("errorDisplay").style.display = 'none';
+    function childNameValidation(childName) {
+      // Reset error field back to hidden
       document.getElementById("childNameErrorDisplay").style.display = 'none';
-      document.getElementById("parentNameErrorDisplay").style.display = 'none';
-      document.getElementById("phoneNumberErrorDisplay").style.display = 'none';
-      document.getElementById("unknownErrorDisplay").style.display = 'none';
-      document.getElementById("emailErrorDisplay").style.display = 'none';
-
-      const nameRegEx = /[^a-zA-Z-'ñÑ., ]/g;
-
+      const nameRegEx = /^[a-zA-Z-'ñÑ., ]{1,70}$/g;
       const okChildName = nameRegEx.exec(childName);
-      if (okChildName != null) {
+      if (okChildName == null) {
         // If child name contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
-        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("childNameErrorDisplay").style.display = 'inline';
         window.alert("Please enter a valid child name. Names may only contain letters, hyphens, and apostrophies.");
         throw new Error("Child name failed RegEx check. RegEx result array: " + okChildName);
       }
+    }
 
+    function parentNameValidation(parentName) {
+      document.getElementById("parentNameErrorDisplay").style.display = 'none';
+      const nameRegEx = /^[a-zA-Z-'ñÑ., ]{1,70}$/g;
       const okParentName = nameRegEx.exec(parentName);
-      if (okParentName != null) {
+      if (okParentName == null) {
         // If parent name contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
-        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("parentNameErrorDisplay").style.display = 'inline';
         window.alert("Please enter a valid parent/guardian name. Names may only contain letters, hyphens, and apostrophies.");
         throw new Error("Parent name failed RegEx check. RegEx result array: " + okParentName);
       }
+    }
 
+    function phoneNumberValidation(phoneNumber) {
+      document.getElementById("phoneNumberErrorDisplay").style.display = 'none';
       // This phone validator RegEx expression was modified from: regexr.com/38ohj
       const phoneRegEx = /^(?:\d{1}\s)?\(?(\d{3})\)?-?\s?(\d{3})-?\s?(\d{4})$/g;
       const okPhone = phoneRegEx.exec(phoneNumber);
 
       if (okPhone == null && phoneNumber != "") {
         // If phone number contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
-        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("phoneNumberErrorDisplay").style.display = 'inline';
         window.alert("Please enter a valid phone number, or leave the phone number field blank. Phone numbers can be entered as (###) ###-#### or as ### ### ####.");
         throw new Error("Phone number failed RegEx check. RegEx result array: " + okPhone);
       } 
-      
+    }
+
+    function emailValidation(email) {
+      document.getElementById("emailErrorDisplay").style.display = 'none';
       // This email validator RegEx expression was modified from: regexr.com/2rhq7
       const emailRegEx = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/g;
       const okEmail = emailRegEx.exec(email);
 
       if (okEmail == null && email != "") {
         // If email contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
-        document.getElementById("errorDisplay").style.display = 'inline';
         document.getElementById("emailErrorDisplay").style.display = 'inline';
         window.alert("Please enter a valid email address, or leave the email address field blank.");
         throw new Error("Email address failed RegEx check. RegEx result array: " + okEmail);
       } 
-    };
+    }
 
     // TAG SELECTION FEATURE
     function addSuggestedTag(sectionID, id, tagString) {
