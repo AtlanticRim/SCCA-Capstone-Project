@@ -23,6 +23,12 @@
 
   .large-purple-button {
     cursor: pointer;
+  }
+
+  #jump-to-parent-section {
+    width: 80%;
+  }
+  #jump-to-educator-section {
     width: 80%;
   }
 
