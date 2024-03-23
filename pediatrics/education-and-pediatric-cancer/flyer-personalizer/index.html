@@ -778,15 +778,17 @@
       3. The tagText is pushed as a new tag to the appropriate array
       4. The tag display for that section is added.*/
 
-      const regExTagCheck = /\W/g;
+      tagText = document.getElementById(tagEntryID).value.toString(); // Casted to String for safety
+      const regExTagCheck = /^[\w ,.'!?'"ñÑ\-]{1,20}$/g;
       const okTagText = regExTagCheck.exec(tagText);
 
-      if (okTagText != null) {
+      if (okTagText == null) {
+        window.alert("The tag you have entered is invalid. Tags can only contain letters, numbers, and standard punctuation marks.");
         console.log("Aborted adding tag due to error. Details: " + sectionID + " " + specificTagArray + " " + tagEntryID + " " + tagEntrySubmitID);
         return;
       }
 
-      tagText = document.getElementById(tagEntryID).value;
+      // If the tag is valid, clear the field and add it to the tag array
       document.getElementById(tagEntryID).value = '';
 
       if (specificTagArray.length < 9) {
