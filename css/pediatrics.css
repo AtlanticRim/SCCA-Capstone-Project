@@ -39,6 +39,7 @@
 
   .parent-cta {
     background: url("../img/ET_ParentsBanner.png");
+    -webkit-background-size: cover;
     background-size: cover;
     background-position: right;
     margin-top: 0px; }
@@ -60,7 +61,9 @@
       margin-bottom: 14px; }
 
   .educator-cta {
+    
         background: url("../img/ET_EducatorsBanner.png");
+        -webkit-background-size: cover;
         background-size: cover;
         background-position: right;
         margin-top: 0px; }

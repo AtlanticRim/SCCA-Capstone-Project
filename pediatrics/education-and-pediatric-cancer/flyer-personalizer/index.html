@@ -563,7 +563,7 @@
       Authors: J. Alan Wallace and Ronisha Genwright
       Contact Info: alanwallaceii2@gmail.com, github.com/AtlanticRim
       Version: 1.0
-      Date Last Updated: March 14, 2024
+      Date Last Updated: March 31, 2024
     --------------------------------------------*/
 
     // Constants needed for PDF-LIB to work. 
@@ -587,8 +587,7 @@
     const addedWhatILoveTags = new Array();
 
     const defaultImgUrl = "/img/SCCA_Flyer_Default.png" // Holds link to default image, used if user does not upload an image
-    // Variables and basic update function for image upload
-    var imageAsUint8Array;
+    var imageAsUint8Array; // Variable used in image uploading a drawing
 
     // Event listener for image upload
     const imageUpload = document.getElementById("imageUpload");
@@ -634,6 +633,15 @@
     const url = "/pediatrics/education-and-pediatric-cancer/SCCA_Meet_My_Child_Letter.pdf";
     // Variables for PDF Loading, Customization, and Download
     var existingPdfBytes, pdfDoc, helvetica, largeFontSize, mediumFontSize, smallFontSize, pages, firstPage, width, height;
+
+    // Method to update tag fields on page load, this fixes a bug on smaller screens where the hidden buttons would show
+    $(document).ready(function () {
+      updateTagDisplay(0);
+      updateTagDisplay(1);
+      updateTagDisplay(2);
+      updateTagDisplay(3);
+      updateTagDisplay(4);
+    });
 
     // CONTROLLER FUNCTION
     async function personalizePDF() {
