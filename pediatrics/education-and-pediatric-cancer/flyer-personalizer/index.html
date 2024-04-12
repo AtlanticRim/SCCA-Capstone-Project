@@ -563,7 +563,7 @@
       Authors: J. Alan Wallace and Ronisha Genwright
       Contact Info: alanwallaceii2@gmail.com, github.com/AtlanticRim
       Version: 1.0
-      Date Last Updated: March 31, 2024
+      Date Last Updated: April 4, 2024
     --------------------------------------------*/
 
     // Constants needed for PDF-LIB to work. 
@@ -587,7 +587,7 @@
     const addedWhatILoveTags = new Array();
 
     const defaultImgUrl = "/img/SCCA_Flyer_Default.png" // Holds link to default image, used if user does not upload an image
-    var imageAsUint8Array; // Variable used in image uploading a drawing
+    var imageAsUint8Array; // Variable used in image uploading and drawing
 
     // Event listener for image upload
     const imageUpload = document.getElementById("imageUpload");
@@ -598,22 +598,22 @@
     // Event listners for input validation
     const childFNameField = document.getElementById("childFirstName");
     childFNameField.addEventListener('change', (event) => {
-      childName = childFNameField.value.toString() + childLNameField.value.toString();
+      childName = childFNameField.value.toString() + " " + childLNameField.value.toString();
       childNameValidation(childName);
     });
     const childLNameField = document.getElementById("childLastName");
     childLNameField.addEventListener('change', (event) => {
-      childName = childFNameField.value.toString() + childLNameField.value.toString();
+      childName = childFNameField.value.toString() + " " + childLNameField.value.toString();
       childNameValidation(childName);
     });
     const parentFNameField = document.getElementById("parentFirstName");
     parentFNameField.addEventListener('change', (event) => {
-      parentName = parentFNameField.value.toString() + parentLNameField.value.toString();
+      parentName = parentFNameField.value.toString() + " " + parentLNameField.value.toString();
       parentNameValidation(parentName);
     });
     const parentLNameField = document.getElementById("parentLastName");
     parentLNameField.addEventListener('change', (event) => {
-      parentName = parentFNameField.value.toString() + parentLNameField.value.toString();
+      parentName = parentFNameField.value.toString() + " " + parentLNameField.value.toString();
       parentNameValidation(parentName);
     });
     const phoneNumField = document.getElementById("phoneNumber");
@@ -634,7 +634,7 @@
     // Variables for PDF Loading, Customization, and Download
     var existingPdfBytes, pdfDoc, helvetica, largeFontSize, mediumFontSize, smallFontSize, pages, firstPage, width, height;
 
-    // Method to update tag fields on page load, this fixes a bug on smaller screens where the hidden buttons would show
+    // Method to update tag fields on page load, this fixes a bug on smaller screens where the hidden buttons would still show
     $(document).ready(function () {
       updateTagDisplay(0);
       updateTagDisplay(1);
@@ -656,25 +656,27 @@
 
     // BASIC INFORMATION INPUT FEATURE
     function getInfo() {
-      // This method retrieves the information from the forms and puts it in the global variables.
-      // The values of the fields are then cast to Strings to prevent injection attacks
+      /* This method retrieves the information from the forms and puts it in the global variables.
+         The values of the fields are cast to Strings to prevent injection attacks
+         The names are concat together then validated one last time by RegEx.
+         If a RegEx check fails, an error is thrown by the validation method that will stop this method
+      */
+ 
+      childName = childFNameField.value.toString() + " " + childLNameField.value.toString();
+      childNameValidation(childName);
+      parentName = parentFNameField.value.toString() + " " + parentLNameField.value.toString();
+      parentNameValidation(parentName);
 
-      const childFirstName = document.getElementById("childFirstName").value.toString();
-      const childLastName = document.getElementById("childLastName").value.toString();
-      const parentFirstName = document.getElementById("parentFirstName").value.toString();
-      const parentLastName = document.getElementById("parentLastName").value.toString();
-
-      childName = childFirstName + ' ' +  childLastName;
-      parentName = parentFirstName + ' ' + parentLastName;
-
-      phoneNumber = document.getElementById("phoneNumber").value.toString();
-      email = document.getElementById("email").value.toString();
+      phoneNumber = phoneNumField.value.toString();
+      phoneNumberValidation(phoneNumber);
+      email = emailField.value.toString();
+      emailValidation(email);
     };
 
     function childNameValidation(childName) {
       // Reset error field back to hidden
       document.getElementById("childNameErrorDisplay").style.display = 'none';
-      const nameRegEx = /^[a-zA-Z-'ñÑ., ]{1,70}$/g;
+      const nameRegEx = /^[a-zA-Z-'ñÑ., ]{2,70}$/g;
       const okChildName = nameRegEx.exec(childName);
       if (okChildName == null) {
         // If child name contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
@@ -686,7 +688,7 @@
 
     function parentNameValidation(parentName) {
       document.getElementById("parentNameErrorDisplay").style.display = 'none';
-      const nameRegEx = /^[a-zA-Z-'ñÑ., ]{1,70}$/g;
+      const nameRegEx = /^[a-zA-Z-'ñÑ., ]{2,70}$/g;
       const okParentName = nameRegEx.exec(parentName);
       if (okParentName == null) {
         // If parent name contains unexpected characters, dispaly explanatory text, display a browser alert, and throw an error
@@ -734,7 +736,7 @@
         case 2: if (addedDoesntWorkTags.length > 9) return; addedDoesntWorkTags.push("- ".concat(tagString)); break;
         case 3: if (addedWorkingOnTags.length > 9) return; addedWorkingOnTags.push("- ".concat(tagString)); break; 
         case 4: if (addedWhatILoveTags.length > 9) return; addedWhatILoveTags.push("- ".concat(tagString)); break;
-        default: console.log("Error Adding Tag " + sectionID + " " + id + " " + tagString); return; break;
+        default: console.log("Error Adding Tag " + sectionID + " " + id + " " + tagString); return;
       }
 
       // If the tag has successfully been added, hide the suggested tag
